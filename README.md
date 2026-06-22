@@ -1,4 +1,4 @@
-# BRACIS Paper — ENEM, FUVEST, Unicamp
+# ENIAC Paper — ENEM, FUVEST, Unicamp
 
 **Paper title:** *How Well Do Small Language Models Understand the Brazilian Educational Context? An Evaluation on ENEM, FUVEST and Unicamp*
 
@@ -10,7 +10,7 @@ For both the experiments and the notebook to run, you must keep three repositori
 
 ```
 parent/
-├── BRACIS-paper-ENEM-FUVEST-Unicamp/   <-- you are here
+├── ENIAC-paper-ENEM-FUVEST-Unicamp/   <-- you are here
 ├── BLUEX/                               <-- FUVEST + UNICAMP question JSONs + images
 └── ENEM-question-answering/             <-- ENEM CSVs + images
 ```
@@ -24,7 +24,7 @@ and BLUEX repos.
 ## Repository contents
 
 ```
-BRACIS-paper-ENEM-FUVEST-Unicamp/
+ENIAC-paper-ENEM-FUVEST-Unicamp/
 ├── experiments/
 │   ├── runner.py            # async full-run driver (plan 3)
 │   ├── smoke.py             # 10-question sanity test (plan 2)

@@ -1,0 +1,1874 @@
+Logging to 
+/Users/matheus.scatolin/Documents/pessoal/IC/BRACIS-paper-ENEM-FUVEST-Unicamp/experiments/data/smoke_20260427T001841Z.lo
+g
+Plan-2 smoke test: 10 questions × 3 models
+Loading models from models.json...
+  16 total models; 3 will run.
+    - google/gemma-3-4b-it
+    - meta-llama/Meta-Llama-3.1-8B-Instruct
+    - Qwen/Qwen3.5-4B
+
+Loading questions (ENEM + BLUEX)...
+  loaded 3710 questions total.
+
+Picking 10 smoke questions (seed=42)...
+  [1] ENEM_2018_mat_163  dataset=ENEM  year=2018  subject=('matematica',)  has_images=False  alt_images=False  
+type=string
+  [2] ENEM_2020_cih_51  dataset=ENEM  year=2020  subject=('ciencias-humanas',)  has_images=False  alt_images=False  
+type=string
+  [3] USP_2019_58  dataset=FUVEST  year=2019  subject=('portuguese',)  has_images=False  alt_images=False  type=string
+  [4] UNICAMP_2020_90  dataset=UNICAMP  year=2020  subject=('history',)  has_images=False  alt_images=False  type=string
+  [5] UNICAMP_2020_62  dataset=UNICAMP  year=2020  subject=('portuguese',)  has_images=False  alt_images=False  
+type=string
+  [6] ENEM_2018_cin_131  dataset=ENEM  year=2018  subject=('ciencias-natureza',)  has_images=True  alt_images=True  
+type=string
+  [7] ENEM_2019_mat_151  dataset=ENEM  year=2019  subject=('matematica',)  has_images=True  alt_images=False  
+type=string
+  [8] USP_2019_19  dataset=FUVEST  year=2019  subject=('physics',)  has_images=True  alt_images=False  type=string
+  [9] UNICAMP_2020_67  dataset=UNICAMP  year=2020  subject=('portuguese',)  has_images=True  alt_images=False  
+type=string
+  [10] UNICAMP_2019_63  dataset=UNICAMP  year=2019  subject=('mathematics',)  has_images=True  alt_images=True  
+type=images
+
+Checking DeepInfra catalog...
+  present in catalog: 15 / 16
+  absent from catalog (slug mismatch or unreleased):
+    - meta-llama/Llama-3.2-3B-Instruct
+
+───────────────────────────────────────────────
+[1/30]  question_id = ENEM_2018_mat_163
+        model       = google/gemma-3-4b-it
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=truncated_but_answered)
+        cost        = $0.000140   (running: $0.000140)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2018, matematica)
+
+O gerente do setor de recursos humanos de uma empresa está organizando uma avaliação em que uma das etapas é um jogo de perguntas e respostas. Para essa etapa, ele classificou as perguntas, pelo nível de dificuldade, em fácil, médio e difícil, e escreveu cada pergunta em cartões para colocação em uma urna.
+Contudo, após depositar vinte perguntas de diferentes níveis na urna, ele observou que 25% delas eram de nível fácil. Querendo que as perguntas de nível fácil sejam a maioria, o gerente decidiu acrescentar mais perguntas de nível fácil à urna, de modo que a probabilidade de o primeiro participante retirar, aleatoriamente, uma pergunta de nível fácil seja de 75%.
+
+Com essas informações, a quantidade de perguntas de nível fácil que o gerente deve acrescentar à urna é igual a
+
+# Alternativas
+
+A) 10.
+B) 15.
+C) 35.
+D) 40.
+E) 45.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"D","reasoning_summary":"O gerente quer que as perguntas fáceis representem 75% do total. Inicialmente, há 25% de perguntas fáceis (5 perguntas). Para atingir 75%, o número de perguntas fáceis deve ser 75% do total. Seja 'x' o número de perguntas fáceis a serem adicionadas. O total de perguntas na urna será 20 + x. A equação para o número de perguntas fáceis ser 75% do total é: 0.25 * 20 + x * 0.25 = 0.75 * (20 + x). Simplificando: 5 + 0.25x = 15 + 0.75x.  Subtraindo 0.25x de ambos os lados: 5 = 15 + 0.5x.  Subtraindo 15 de ambos os lados: -10 = 0.5x.  Dividindo por 0.5: x = -20. Isso está incorreto.
+
+A equação correta é: (20 + x) * 0.25 = 0.75 * (20 + x) / 1.  O número de perguntas fáceis deve ser 75% do total.  Seja 'x' o número de perguntas fáceis a serem adicionadas. O total de perguntas será 20 + x.  Então, 0.25 * 20 + x * 0.25 = 0.75 * (20 + x).  5 + 0.25x = 15 + 0.75x.  0.5x = -10.  x = -20, o que não faz sentido.
+
+Vamos pensar de outra forma. Queremos que a probabilidade de tirar uma pergunta fácil seja 75%, ou seja, 3/4.  Seja 'x' o número de perguntas fáceis a serem adicionadas. O número total de perguntas será 20 + x.  O número de perguntas fáceis será 25% de 20 + x, ou seja, 0.25 * (20 + x).  A probabilidade de tirar uma pergunta fácil é (0.25 * (20 + x)) / (20 + x) = 0.25.  Queremos que essa probabilidade seja 0.75.  Portanto, (0.25 * (20 + x)) / (20 + x) = 0.75.  Isso é sempre 0.25, então há um erro na interpretação.
+
+O problema pede que a probabilidade de retirar uma pergunta fácil seja 75%. Isso significa que o número de perguntas fáceis dividido pelo número total de perguntas deve ser 0.75.  Seja 'x' o número de perguntas fáceis a serem adicionadas. O número total de perguntas será 20 + x. O número de perguntas fáceis será 25% de 20 + x, ou seja, 0.25 * (20 + x).  Então, (0.25 * (20 + x)) / (20 + x) = 0.75.  Isso é sempre 0.25, então o problema está em interpretar a probabilidade.
+
+Queremos que a probabilidade de tirar uma pergunta fácil seja 75%.  Então, a proporção de perguntas fáceis no total deve ser 75%.  Seja 'x' o número de perguntas fáceis a serem adicionadas. O número total de perguntas será 20 + x. O número de perguntas fáceis será 25% de 20 + x + x * 0.25.  Então, (25% de 20 + x) / (20 + x) = 0.75.  (0.25 * (20 + x)) / (20 + x) = 0.75.  Isso não faz sentido.
+
+Vamos tentar outra abordagem. Queremos que a probabilidade de tirar uma pergunta fácil seja 75%.  Isso significa que 75% das perguntas na urna devem ser fáceis.  Seja 'x' o número de perguntas fáceis a serem adicionadas.  O número total de perguntas na urna será 20 + x.  O número de perguntas fáceis será 25% de 20 + x + x.  Então, (25% de 20 + x) + x = 0.75 * (20 + x).  0.25 * (20 + x) + x = 15 + 0.75x.  5 + 0.25x + x = 15 + 0.75x.  1.25x + 5 = 15 + 0.75x.  0.5x = 10.  x = 20.  Isso está incorreto.
+
+O problema pede que a probabilidade de tirar uma pergunta fácil seja 75%.  Seja x o número de perguntas fáceis a serem adicionadas. O número total de perguntas será 20 + x. O número de perguntas fáceis será 25% de 20 + x + x.  A probabilidade de tirar uma pergunta fácil é (25% de 20 + x + x) / (20 + x) = 0.75.  (0.25 * 20 + 0.25x + x) / (20 + x) = 0.75.  (5 + 1.25x) / (20 + x) = 0.75.  5 + 1.25x = 0.75 * (20 + x).  5 + 1.25x = 15 + 0.75x.  0.5x = 10.  x = 20.  O número de perguntas fáceis a serem adicionadas é 20.  Mas as alternativas são menores que 20.
+
+Vamos reconsiderar. Queremos que a probabilidade de tirar uma pergunta fácil seja 0.75.  O número de perguntas fáceis é 0.25 * 20 = 5.  Seja x o número de perguntas fáceis a serem adicionadas.  O número total de perguntas é 20 + x.  O número de perguntas fáceis é 5 + x.  Então, (5 + x) / (20 + x) = 0.75.  5 + x = 0.75 * (
+```
+
+--- PARSED ---
+chosen alternative : D
+correct alternative: D
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[2/30]  question_id = ENEM_2018_mat_163
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000026   (running: $0.000166)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2018, matematica)
+
+O gerente do setor de recursos humanos de uma empresa está organizando uma avaliação em que uma das etapas é um jogo de perguntas e respostas. Para essa etapa, ele classificou as perguntas, pelo nível de dificuldade, em fácil, médio e difícil, e escreveu cada pergunta em cartões para colocação em uma urna.
+Contudo, após depositar vinte perguntas de diferentes níveis na urna, ele observou que 25% delas eram de nível fácil. Querendo que as perguntas de nível fácil sejam a maioria, o gerente decidiu acrescentar mais perguntas de nível fácil à urna, de modo que a probabilidade de o primeiro participante retirar, aleatoriamente, uma pergunta de nível fácil seja de 75%.
+
+Com essas informações, a quantidade de perguntas de nível fácil que o gerente deve acrescentar à urna é igual a
+
+# Alternativas
+
+A) 10.
+B) 15.
+C) 35.
+D) 40.
+E) 45.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"C","reasoning_summary":"O gerente inicialmente colocou 20 perguntas na urna, das quais 25% eram de nível fácil. Isso significa que 5 perguntas eram de nível fácil. Para que a probabilidade de o primeiro participante retirar uma pergunta de nível fácil seja de 75%, o número de perguntas de nível fácil deve ser 3 vezes o número de perguntas em geral. Portanto, o número total de perguntas deve ser 15. Como já existem 5 perguntas de nível fácil, o gerente deve acrescentar 10 perguntas de nível fácil à urna. No entanto, a questão pede a quantidade de perguntas de nível fácil que o gerente deve acrescentar à urna, e não a quantidade total de perguntas de nível fácil. Portanto, a resposta correta é 10 perguntas de nível fácil, que é a alternativa A. No entanto, a alternativa C é a quantidade de perguntas de nível fácil que o gerente deve acrescentar à urna, pois 10 perguntas de nível fácil são necessárias para que a probabilidade de o primeiro participante retirar uma pergunta de nível fácil seja de 75%, e o gerente já colocou 5 perguntas de nível fácil na urna. "}
+```
+
+--- PARSED ---
+chosen alternative : C
+correct alternative: D
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[3/30]  question_id = ENEM_2018_mat_163
+        model       = Qwen/Qwen3.5-4B
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000231   (running: $0.000397)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2018, matematica)
+
+O gerente do setor de recursos humanos de uma empresa está organizando uma avaliação em que uma das etapas é um jogo de perguntas e respostas. Para essa etapa, ele classificou as perguntas, pelo nível de dificuldade, em fácil, médio e difícil, e escreveu cada pergunta em cartões para colocação em uma urna.
+Contudo, após depositar vinte perguntas de diferentes níveis na urna, ele observou que 25% delas eram de nível fácil. Querendo que as perguntas de nível fácil sejam a maioria, o gerente decidiu acrescentar mais perguntas de nível fácil à urna, de modo que a probabilidade de o primeiro participante retirar, aleatoriamente, uma pergunta de nível fácil seja de 75%.
+
+Com essas informações, a quantidade de perguntas de nível fácil que o gerente deve acrescentar à urna é igual a
+
+# Alternativas
+
+A) 10.
+B) 15.
+C) 35.
+D) 40.
+E) 45.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+
+
+{"predicted_answer":"D","reasoning_summary":"Inicialmente, há 20 perguntas na urna, sendo 25% de nível fácil. Isso corresponde a 5 perguntas fáceis. O gerente deseja adicionar x perguntas fáceis para que a probabilidade de retirar uma seja 75%. A nova quantidade total será 20 + x e a de fáceis 5 + x. A equação é (5 + x) / (20 + x) = 0,75. Multiplicando, temos 5 + x = 15 + 0,75x. Isolando x, obtemos 0,25x = 10, logo x = 40. A alternativa correta é a D."}
+```
+
+--- PARSED ---
+chosen alternative : D
+correct alternative: D
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[4/30]  question_id = ENEM_2020_cih_51
+        model       = google/gemma-3-4b-it
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000028   (running: $0.000425)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2020, ciencias-humanas)
+
+Acreditamos e proclamamos que: toda criança tem direito fundamental à educação e deve ser dada a oportunidade de atingir e manter o nível adequado de aprendizagem; toda criança possui características, interesses, habilidades e necessidades de aprendizagem que são únicas; sistemas educacionais deveriam ser designados e programas educacionais deveriam ser implementados no sentido de se levar em conta a vasta diversidade de tais características e necessidades.
+
+Disponível em: http://portal.mec.gov.br. Acesso em: 4 oct. 2015.
+
+Como signatário da Declaração citada, o Brasil comprometeu-se com a elaboração de políticas públicas educacionais que contemplem a
+
+# Alternativas
+
+A) criação de privilégios.
+B) contenção dos gastos.
+C) pluralidade dos sujeitos.
+D) padronização do currículo.
+E) valorização da meritocracia.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"C","reasoning_summary":"O texto enfatiza a importância de considerar a diversidade de características, interesses e necessidades de aprendizagem de cada criança. A Declaração compromete o Brasil a elaborar políticas públicas que levem em conta essa vasta diversidade. A alternativa C, 'pluralidade dos sujeitos', reflete diretamente esse compromisso, pois reconhece a importância de valorizar as diferenças individuais no contexto educacional. As demais alternativas não se alinham com o espírito do texto, que busca inclusão e respeito à diversidade."}
+```
+
+--- PARSED ---
+chosen alternative : C
+correct alternative: C
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[5/30]  question_id = ENEM_2020_cih_51
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000017   (running: $0.000441)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2020, ciencias-humanas)
+
+Acreditamos e proclamamos que: toda criança tem direito fundamental à educação e deve ser dada a oportunidade de atingir e manter o nível adequado de aprendizagem; toda criança possui características, interesses, habilidades e necessidades de aprendizagem que são únicas; sistemas educacionais deveriam ser designados e programas educacionais deveriam ser implementados no sentido de se levar em conta a vasta diversidade de tais características e necessidades.
+
+Disponível em: http://portal.mec.gov.br. Acesso em: 4 oct. 2015.
+
+Como signatário da Declaração citada, o Brasil comprometeu-se com a elaboração de políticas públicas educacionais que contemplem a
+
+# Alternativas
+
+A) criação de privilégios.
+B) contenção dos gastos.
+C) pluralidade dos sujeitos.
+D) padronização do currículo.
+E) valorização da meritocracia.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"C","reasoning_summary":"A Declaração citada enfatiza a importância de considerar a diversidade de características e necessidades de aprendizagem de cada criança. Isso implica reconhecer a pluralidade dos sujeitos envolvidos no processo educacional, incluindo as crianças, os professores, os pais e a sociedade como um todo. A valorização da pluralidade dos sujeitos é fundamental para garantir que as políticas educacionais sejam inclusivas e respeitem a diversidade de necessidades e interesses de todos os envolvidos."}
+```
+
+--- PARSED ---
+chosen alternative : C
+correct alternative: C
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[6/30]  question_id = ENEM_2020_cih_51
+        model       = Qwen/Qwen3.5-4B
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000231   (running: $0.000673)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2020, ciencias-humanas)
+
+Acreditamos e proclamamos que: toda criança tem direito fundamental à educação e deve ser dada a oportunidade de atingir e manter o nível adequado de aprendizagem; toda criança possui características, interesses, habilidades e necessidades de aprendizagem que são únicas; sistemas educacionais deveriam ser designados e programas educacionais deveriam ser implementados no sentido de se levar em conta a vasta diversidade de tais características e necessidades.
+
+Disponível em: http://portal.mec.gov.br. Acesso em: 4 oct. 2015.
+
+Como signatário da Declaração citada, o Brasil comprometeu-se com a elaboração de políticas públicas educacionais que contemplem a
+
+# Alternativas
+
+A) criação de privilégios.
+B) contenção dos gastos.
+C) pluralidade dos sujeitos.
+D) padronização do currículo.
+E) valorização da meritocracia.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+
+
+{"predicted_answer":"C","reasoning_summary":"O texto enfatiza a singularidade e a diversidade de cada criança, exigindo que os sistemas educacionais considerem essas diferenças. Assim, as políticas públicas devem contemplar a variedade de perfis dos alunos. A opção C, 'pluralidade dos sujeitos', alinha-se com essa ideia de reconhecer a diversidade, enquanto a padronização (D) contradiz o propósito de atender necessidades únicas. Privilegios (A), contenção de gastos (B) e meritocracia (E) não são mencionados como objetivos centrais da declaração citada."}
+```
+
+--- PARSED ---
+chosen alternative : C
+correct alternative: C
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[7/30]  question_id = USP_2019_58
+        model       = google/gemma-3-4b-it
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000030   (running: $0.000702)
+
+--- PROMPT (user) ---
+# Questão (FUVEST, 2019, portuguese)
+
+TEXTO PARA AS QUESTÕES 58 E 59
+Mito, na acepção aqui empregada, não significa mentira,
+falsidade ou mistificação. Tomo de empréstimo a formulação
+de Hans Blumenberg do mito político como um processo
+contínuo de trabalho de uma narrativa que responde a uma
+necessidade prática de uma sociedade em determinado 5
+período. Narrativa simbólica que é, o mito político coloca em
+suspenso o problema da verdade. Seu discurso não pretende ter
+validade factual, mas também não pode ser percebido como
+mentira (do contrário, não seria mito). O mito político confere
+um sentido às circunstâncias que envolvem os indivíduos: ao 10
+fazê‐los ver sua condição presente como parte de uma história
+em curso, ajuda a compreender e suportar o mundo em que
+vivem.
+ENGELKE, Antonio. O anjo redentor. Piauí, ago. 2018, ed. 143, p. 24.
+De acordo com o texto, o "mito político"
+
+# Alternativas
+
+A) prejudica o entendimento do mundo real.
+B) necessita da abstração do tempo.
+C) depende da verificação da verdade.
+D) é uma fantasia desvinculada da realidade.
+E) atende a situações concretas.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"E","reasoning_summary":"O texto define o mito político como um processo narrativo que responde a uma necessidade prática da sociedade, suspendendo o problema da verdade factual. Ele confere sentido às circunstâncias e ajuda os indivíduos a compreenderem e suportarem o mundo em que vivem. Portanto, o mito político atende a situações concretas, o que corresponde à alternativa E."}
+```
+
+--- PARSED ---
+chosen alternative : E
+correct alternative: E
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[8/30]  question_id = USP_2019_58
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000019   (running: $0.000722)
+
+--- PROMPT (user) ---
+# Questão (FUVEST, 2019, portuguese)
+
+TEXTO PARA AS QUESTÕES 58 E 59
+Mito, na acepção aqui empregada, não significa mentira,
+falsidade ou mistificação. Tomo de empréstimo a formulação
+de Hans Blumenberg do mito político como um processo
+contínuo de trabalho de uma narrativa que responde a uma
+necessidade prática de uma sociedade em determinado 5
+período. Narrativa simbólica que é, o mito político coloca em
+suspenso o problema da verdade. Seu discurso não pretende ter
+validade factual, mas também não pode ser percebido como
+mentira (do contrário, não seria mito). O mito político confere
+um sentido às circunstâncias que envolvem os indivíduos: ao 10
+fazê‐los ver sua condição presente como parte de uma história
+em curso, ajuda a compreender e suportar o mundo em que
+vivem.
+ENGELKE, Antonio. O anjo redentor. Piauí, ago. 2018, ed. 143, p. 24.
+De acordo com o texto, o "mito político"
+
+# Alternativas
+
+A) prejudica o entendimento do mundo real.
+B) necessita da abstração do tempo.
+C) depende da verificação da verdade.
+D) é uma fantasia desvinculada da realidade.
+E) atende a situações concretas.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"E","reasoning_summary":"O mito político, segundo o texto, é uma narrativa simbólica que responde a uma necessidade prática de uma sociedade em determinado período. Ele coloca em suspenso o problema da verdade e confere um sentido às circunstâncias que envolvem os indivíduos. Isso significa que o mito político atende a situações concretas, ajudando a compreender e suportar o mundo em que vivem. Portanto, a alternativa correta é E, pois o mito político atende a situações concretas."}
+```
+
+--- PARSED ---
+chosen alternative : E
+correct alternative: E
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[9/30]  question_id = USP_2019_58
+        model       = Qwen/Qwen3.5-4B
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000236   (running: $0.000957)
+
+--- PROMPT (user) ---
+# Questão (FUVEST, 2019, portuguese)
+
+TEXTO PARA AS QUESTÕES 58 E 59
+Mito, na acepção aqui empregada, não significa mentira,
+falsidade ou mistificação. Tomo de empréstimo a formulação
+de Hans Blumenberg do mito político como um processo
+contínuo de trabalho de uma narrativa que responde a uma
+necessidade prática de uma sociedade em determinado 5
+período. Narrativa simbólica que é, o mito político coloca em
+suspenso o problema da verdade. Seu discurso não pretende ter
+validade factual, mas também não pode ser percebido como
+mentira (do contrário, não seria mito). O mito político confere
+um sentido às circunstâncias que envolvem os indivíduos: ao 10
+fazê‐los ver sua condição presente como parte de uma história
+em curso, ajuda a compreender e suportar o mundo em que
+vivem.
+ENGELKE, Antonio. O anjo redentor. Piauí, ago. 2018, ed. 143, p. 24.
+De acordo com o texto, o "mito político"
+
+# Alternativas
+
+A) prejudica o entendimento do mundo real.
+B) necessita da abstração do tempo.
+C) depende da verificação da verdade.
+D) é uma fantasia desvinculada da realidade.
+E) atende a situações concretas.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+
+
+{"predicted_answer":"E","reasoning_summary":"O texto define o mito político como uma narrativa que responde a uma 'necessidade prática' de uma sociedade em um determinado período. Ele confere sentido às circunstâncias e ajuda os indivíduos a compreenderem e suportarem o mundo em que vivem. Isso indica que o mito político não é uma fantasia desvinculada da realidade, nem busca a verdade factual, mas sim atende a demandas concretas e práticas da sociedade. Portanto, a alternativa que melhor reflete essa ideia é a que afirma que ele atende a situações concretas."}
+```
+
+--- PARSED ---
+chosen alternative : E
+correct alternative: E
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[10/30]  question_id = UNICAMP_2020_90
+        model       = google/gemma-3-4b-it
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000043   (running: $0.001000)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, history)
+
+Nas últimas três décadas, vimos o fim de velhas unidades
+políticas e a emergência de novas: as unificações da
+Alemanha e do Iêmen, a desintegração da
+Checoslováquia, da Iugoslávia e da União Soviética, a
+secessão de países como Eritreia, Timor-Leste e Kosovo.
+Vimos também a expansão de esforços de integração
+política e econômica, a absorção de antigos membros do
+Pacto de Varsóvia na Otan, o envolvimento de exércitos
+nacionais em esforços da ONU pela manutenção da paz e
+a mobilização de outros tantos exércitos na tentativa de
+conter e definir o terrorismo como fenômeno político.
+(Adaptado de Sebastião Nascimento, Vinte anos sem muro em Berlim: novas faces da
+violência política. Revista Brasileira de Ciências Sociais, São Paulo, v.26, n. 77, out. 2011.)
+Sobre esta nova condição histórica e geopolítica
+internacional, é correto afirmar:
+
+# Alternativas
+
+A) As décadas que nos separam da queda do Muro de
+Berlim e do fim da Guerra Fria representam um
+período de continuidade das formas e demandas
+políticas no plano internacional e de manutenção da
+cartografia mundial.
+B) A reunificação alemã foi decisiva nesse processo
+global. Ela fez desaparecer o maior símbolo da Guerra
+Fria na Europa, a Alemanha dividida. A queda do Muro
+de Berlim em 1989 e o 11 de setembro de 2001 são
+marcos desse processo.
+C) Após a descolonização nos anos de 1950 e 1960, a
+dessovietização do mundo nos anos de 1990 reforçou
+o imperialismo, compreendido como um sistema de
+Estados nacionais iguais sob o direito internacional.
+D) Desde 1989, o Estado nacional democrático alcançou
+todo o globo com eleições livres, não apenas no Leste
+Europeu, mas também nos países orientais. Na
+retórica política comum, destaca-se o fenômeno do
+terrorismo atlântico.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"D","reasoning_summary":"O texto descreve um período de mudanças significativas no cenário geopolítico internacional, marcado por unificações, desintegrações e esforços de integração. A alternativa D reflete essa realidade, afirmando que o Estado nacional democrático se expandiu globalmente a partir de 1989, com eleições livres em diversos países, incluindo os orientais. As outras alternativas apresentam informações imprecisas ou incompletas em relação ao contexto histórico descrito no texto. A reunificação alemã é mencionada, mas não é o fator determinante para a expansão do Estado nacional democrático. A alternativa C também apresenta uma visão simplificada do imperialismo, e a alternativa A ignora as transformações ocorridas nesse período."}
+```
+
+--- PARSED ---
+chosen alternative : D
+correct alternative: B
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[11/30]  question_id = UNICAMP_2020_90
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000026   (running: $0.001026)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, history)
+
+Nas últimas três décadas, vimos o fim de velhas unidades
+políticas e a emergência de novas: as unificações da
+Alemanha e do Iêmen, a desintegração da
+Checoslováquia, da Iugoslávia e da União Soviética, a
+secessão de países como Eritreia, Timor-Leste e Kosovo.
+Vimos também a expansão de esforços de integração
+política e econômica, a absorção de antigos membros do
+Pacto de Varsóvia na Otan, o envolvimento de exércitos
+nacionais em esforços da ONU pela manutenção da paz e
+a mobilização de outros tantos exércitos na tentativa de
+conter e definir o terrorismo como fenômeno político.
+(Adaptado de Sebastião Nascimento, Vinte anos sem muro em Berlim: novas faces da
+violência política. Revista Brasileira de Ciências Sociais, São Paulo, v.26, n. 77, out. 2011.)
+Sobre esta nova condição histórica e geopolítica
+internacional, é correto afirmar:
+
+# Alternativas
+
+A) As décadas que nos separam da queda do Muro de
+Berlim e do fim da Guerra Fria representam um
+período de continuidade das formas e demandas
+políticas no plano internacional e de manutenção da
+cartografia mundial.
+B) A reunificação alemã foi decisiva nesse processo
+global. Ela fez desaparecer o maior símbolo da Guerra
+Fria na Europa, a Alemanha dividida. A queda do Muro
+de Berlim em 1989 e o 11 de setembro de 2001 são
+marcos desse processo.
+C) Após a descolonização nos anos de 1950 e 1960, a
+dessovietização do mundo nos anos de 1990 reforçou
+o imperialismo, compreendido como um sistema de
+Estados nacionais iguais sob o direito internacional.
+D) Desde 1989, o Estado nacional democrático alcançou
+todo o globo com eleições livres, não apenas no Leste
+Europeu, mas também nos países orientais. Na
+retórica política comum, destaca-se o fenômeno do
+terrorismo atlântico.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A afirmação de que a reunificação alemã foi decisiva nesse processo global é correta, pois ela simbolizou o fim da Guerra Fria na Europa e a queda do Muro de Berlim em 1989 foi um marco importante desse processo. Além disso, o 11 de setembro de 2001 também é um marco desse processo, pois marcou um momento de mudança na política internacional e na forma como os países lidam com o terrorismo. A afirmação de que a reunificação alemã fez desaparecer o maior símbolo da Guerra Fria na Europa é também correta, pois a Alemanha dividida era um símbolo da Guerra Fria e a sua reunificação simbolizou a sua conclusão. Portanto, a afirmação B é a mais correta."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[12/30]  question_id = UNICAMP_2020_90
+        model       = Qwen/Qwen3.5-4B
+        has_images  = False
+        alt. images = False
+        attempts    = 3 / 3   (status=empty)
+        cost        = $0.000248   (running: $0.001274)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, history)
+
+Nas últimas três décadas, vimos o fim de velhas unidades
+políticas e a emergência de novas: as unificações da
+Alemanha e do Iêmen, a desintegração da
+Checoslováquia, da Iugoslávia e da União Soviética, a
+secessão de países como Eritreia, Timor-Leste e Kosovo.
+Vimos também a expansão de esforços de integração
+política e econômica, a absorção de antigos membros do
+Pacto de Varsóvia na Otan, o envolvimento de exércitos
+nacionais em esforços da ONU pela manutenção da paz e
+a mobilização de outros tantos exércitos na tentativa de
+conter e definir o terrorismo como fenômeno político.
+(Adaptado de Sebastião Nascimento, Vinte anos sem muro em Berlim: novas faces da
+violência política. Revista Brasileira de Ciências Sociais, São Paulo, v.26, n. 77, out. 2011.)
+Sobre esta nova condição histórica e geopolítica
+internacional, é correto afirmar:
+
+# Alternativas
+
+A) As décadas que nos separam da queda do Muro de
+Berlim e do fim da Guerra Fria representam um
+período de continuidade das formas e demandas
+políticas no plano internacional e de manutenção da
+cartografia mundial.
+B) A reunificação alemã foi decisiva nesse processo
+global. Ela fez desaparecer o maior símbolo da Guerra
+Fria na Europa, a Alemanha dividida. A queda do Muro
+de Berlim em 1989 e o 11 de setembro de 2001 são
+marcos desse processo.
+C) Após a descolonização nos anos de 1950 e 1960, a
+dessovietização do mundo nos anos de 1990 reforçou
+o imperialismo, compreendido como um sistema de
+Estados nacionais iguais sob o direito internacional.
+D) Desde 1989, o Estado nacional democrático alcançou
+todo o globo com eleições livres, não apenas no Leste
+Europeu, mas também nos países orientais. Na
+retórica política comum, destaca-se o fenômeno do
+terrorismo atlântico.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+<empty>
+```
+
+--- PARSED ---
+chosen alternative : None
+correct alternative: B
+is_correct         : N/A
+
+───────────────────────────────────────────────
+[13/30]  question_id = UNICAMP_2020_62
+        model       = google/gemma-3-4b-it
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=truncated_but_answered)
+        cost        = $0.000037   (running: $0.001311)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, portuguese)
+
+No livro A cabra vadia: novas confissões, Nelson
+Rodrigues inicia a crônica “Os dois namorados” com a
+seguinte afirmação:
+“há coisas que um grã-fino só confessa num terreno baldio,
+à luz de archotes, e na presença apenas de uma cabra
+vadia.”
+Na crônica “Terreno baldio” ele recorre ao mesmo animal
+para explicar a ideia que teve de criar “entrevistas
+imaginárias”:
+“Não podia ser um gabinete, nem uma sala. Lembrei-me,
+então, do terreno baldio. Eu e o entrevistado e, no máximo,
+uma cabra vadia. Além do valor plástico da figura, a cabra
+não trai. Realmente, nunca se viu uma cabra sair por aí
+fazendo inconfidências.”
+(Nelson Rodrigues, A cabra vadia: novas confissões. Rio de Janeiro: Nova Fronteira, 2016, p.
+52 e160.)
+O caráter confessional associado à figura da cabra nas
+crônicas tem relação com
+
+# Alternativas
+
+A) a veracidade dos depoimentos que o cronista
+testemunha nas entrevistas.
+B) a impostura dos contemporâneos que são objeto dos
+comentários do cronista.
+C) a antipatia do jornalista no que diz respeito à busca de
+identidade dos artistas entrevistados.
+D) a sinceridade dos intelectuais que são objeto das
+crônicas dos jornalistas.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A cabra vadia, no contexto das crônicas de Nelson Rodrigues, funciona como um símbolo de um espaço de confidência e honestidade brutal. O "terreno baldio" representa um ambiente onde as verdades, muitas vezes sujas e obscuras, podem ser reveladas sem julgamentos ou convenções sociais. A cabra, por sua vez, é um testemunha silenciosa e leal, incapaz de "fazer inconfidências", o que a torna ideal para a criação de entrevistas imaginárias, onde o cronista busca desmascarar a impostura e a falsidade presentes na sociedade e nos seus contemporâneos. Portanto, a relação se estabelece com a exposição da impostura dos contemporâneos."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[14/30]  question_id = UNICAMP_2020_62
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = False
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000021   (running: $0.001332)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, portuguese)
+
+No livro A cabra vadia: novas confissões, Nelson
+Rodrigues inicia a crônica “Os dois namorados” com a
+seguinte afirmação:
+“há coisas que um grã-fino só confessa num terreno baldio,
+à luz de archotes, e na presença apenas de uma cabra
+vadia.”
+Na crônica “Terreno baldio” ele recorre ao mesmo animal
+para explicar a ideia que teve de criar “entrevistas
+imaginárias”:
+“Não podia ser um gabinete, nem uma sala. Lembrei-me,
+então, do terreno baldio. Eu e o entrevistado e, no máximo,
+uma cabra vadia. Além do valor plástico da figura, a cabra
+não trai. Realmente, nunca se viu uma cabra sair por aí
+fazendo inconfidências.”
+(Nelson Rodrigues, A cabra vadia: novas confissões. Rio de Janeiro: Nova Fronteira, 2016, p.
+52 e160.)
+O caráter confessional associado à figura da cabra nas
+crônicas tem relação com
+
+# Alternativas
+
+A) a veracidade dos depoimentos que o cronista
+testemunha nas entrevistas.
+B) a impostura dos contemporâneos que são objeto dos
+comentários do cronista.
+C) a antipatia do jornalista no que diz respeito à busca de
+identidade dos artistas entrevistados.
+D) a sinceridade dos intelectuais que são objeto das
+crônicas dos jornalistas.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A figura da cabra vadia é utilizada por Nelson Rodrigues para representar a ideia de que os contemporâneos que são objeto de seus comentários são impostores. Isso é sugerido pela afirmação de que a cabra não trai, ou seja, não revela segredos ou inconfidências. Além disso, a utilização da cabra em um terreno baldio e à luz de archotes sugere um ambiente de confidencialidade e segredo, o que reforça a ideia de que os contemporâneos são impostores. Portanto, a resposta correta é B, a impostura dos contemporâneos que são objeto dos comentários do cronista."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[15/30]  question_id = UNICAMP_2020_62
+        model       = Qwen/Qwen3.5-4B
+        has_images  = False
+        alt. images = False
+        attempts    = 3 / 3   (status=empty)
+        cost        = $0.000243   (running: $0.001575)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, portuguese)
+
+No livro A cabra vadia: novas confissões, Nelson
+Rodrigues inicia a crônica “Os dois namorados” com a
+seguinte afirmação:
+“há coisas que um grã-fino só confessa num terreno baldio,
+à luz de archotes, e na presença apenas de uma cabra
+vadia.”
+Na crônica “Terreno baldio” ele recorre ao mesmo animal
+para explicar a ideia que teve de criar “entrevistas
+imaginárias”:
+“Não podia ser um gabinete, nem uma sala. Lembrei-me,
+então, do terreno baldio. Eu e o entrevistado e, no máximo,
+uma cabra vadia. Além do valor plástico da figura, a cabra
+não trai. Realmente, nunca se viu uma cabra sair por aí
+fazendo inconfidências.”
+(Nelson Rodrigues, A cabra vadia: novas confissões. Rio de Janeiro: Nova Fronteira, 2016, p.
+52 e160.)
+O caráter confessional associado à figura da cabra nas
+crônicas tem relação com
+
+# Alternativas
+
+A) a veracidade dos depoimentos que o cronista
+testemunha nas entrevistas.
+B) a impostura dos contemporâneos que são objeto dos
+comentários do cronista.
+C) a antipatia do jornalista no que diz respeito à busca de
+identidade dos artistas entrevistados.
+D) a sinceridade dos intelectuais que são objeto das
+crônicas dos jornalistas.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+<empty>
+```
+
+--- PARSED ---
+chosen alternative : None
+correct alternative: B
+is_correct         : N/A
+
+───────────────────────────────────────────────
+[16/30]  question_id = ENEM_2018_cin_131
+        model       = google/gemma-3-4b-it
+        has_images  = True
+        alt. images = True
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000095   (running: $0.001670)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2018, ciencias-natureza)
+
+Em desenhos animados é comum vermos a personagem tentando impulsionar um barco soprando ar contra a vela para compensar a falta de vento. Algumas vezes usam o próprio fôlego, foles ou ventiladores. Estudantes de um laboratório didático resolveram investigar essa possibilidade. Para isso, usaram dois pequenos carros de plástico, A e B, instalaram sobre estes pequenas ventoinhas e fixaram verticalmente uma cartolina de curvatura
+parabólica para desempenhar uma função análoga á vela de um barco. No carro B inverteu-se o sentido da ventoinha e manteve-se a vela, a fim de manter as características físicas do barco, massa e formato da cartolina. As figuras representam os carros produzidos. A montagem do carro A busca simular a situação dos desenhos
+animados, pois a ventoinha está direcionada para a vela.
+
+Com os carros orientados de acordo com as figuras, os estudantes ligaram as ventoinhas, aguardaram o fluxo de ar ficar permanente e determinaram os módulos das velocidades médias dos carros  e  para o mesmo intervalo de tempo.
+
+
+A imagem mostra dois carrinhos experimentais, **Carro A** e **Carro B**, com estrutura idêntica: uma base com rodas, dois suportes verticais, um equipado com um ventilador e outro com uma placa curva, semelhante a uma vela/para-brisa.
+
+1.  **Carro A**: O ventilador está virado para a placa do próprio carro, soprando ar diretamente contra ela. O fluxo de ar sai do ventilador e impacta a superfície no mesmo veículo, uma força interna ao sistema.
+2.  **Carro B**: O ventilador está orientado para o lado externo, contrário à placa, soprando e expulsionando o ar para fora do carro, para trás em relação ao veículo.
+
+A ilustração demonstra um experimento de física sobre a **Terceira Lei de Newton, ação e reação**: no Carro A, a força é interna, então o carro não se move; no Carro B, a expulsão de ar gera uma reação que faz o carro se deslocar para frente.
+
+
+
+Essa imagem apresenta uma notação científica/matemática, muito usada em física e química, especialmente na área de espectroscopia:
+1.  A letra **A** maiúscula, em fonte serifada representa uma grandeza científica, como absorbância, amplificação ou uma propriedade similar.
+2.  Dentro dos parênteses, o símbolo grego **λ, lambda** — o símbolo padrão para **comprimento de onda** nas ciências.
+3.  A notação **A(λ)** indica que a grandeza *A* é uma **função dependente do comprimento de onda λ**: ou seja, o valor de A varia conforme o comprimento de onda considerado, um uso comum é em espectros de absorção, onde a absorbância é medida para diferentes comprimentos de onda.
+4.  A imagem é composta apenas por essa notação em cor preta, sobre fundo branco, sem outros elementos.
+
+
+
+Essa imagem apresenta uma notação química simples, em fundo branco:
+1.  O caractere principal é o **B**, símbolo químico do elemento **Boro**, em fonte destacada.
+2.  Ao lado direito, entre parênteses, está o numeral romano **V**, que representa o número 5: essa marcação indica que o átomo de Boro está no **estado de oxidação +5**, uma forma de valência do elemento usada em notações químicas.
+
+Todos os caracteres estão em cor preta, seguindo o padrão de registro químico para indicar a valência de um elemento.
+
+
+A respeito das intensidades das velocidades médias e do sentido de movimento do carro A, os estudantes observaram que:
+
+# Alternativas
+
+A) enem-data/enem-2018/131-images/alt_img_0.png
+
+Esta imagem apresenta um texto em português com notação de física/engenharia, que define as condições de movimento de dois veículos, os carros A e B:
+1.  **Vₐ = 0**: A velocidade do carro A é nula, ou seja, o veículo está parado.
+2.  **Vᵦ > 0**: A velocidade do carro B é positiva, significando que este veículo está em movimento.
+3.  A frase final *o carro A não se move.* reforça a informação que o carro A está parado, enquanto o carro B se desloca.
+
+Trata-se de um texto que estabelece condições iniciais para um problema de física, provavelmente sobre movimento relativo, dinâmica ou colisão de veículos.
+
+B) enem-data/enem-2018/131-images/alt_img_1.png
+
+A imagem apresenta uma expressão matemática e uma frase explicativa em português, relacionadas a movimento de veículos:
+1.  **Fórmula matemática**: `0 < Vₐ < Vᵦ` — ela indica que a velocidade do carro A, representada por Vₐ, é um valor positivo, maior que zero, e menor que a velocidade do carro B, representada por Vᵦ.
+2.  **Frase explicativa**: Ao lado da fórmula, está escrito *"o carro A se move para a direita."*, que contextualiza que a velocidade positiva de A corresponde a um movimento para a direita, seguindo o padrão de referência comum em física para velocidade positiva.
+
+C) enem-data/enem-2018/131-images/alt_img_2.png
+
+A imagem mostra um texto em português, relacionado a um problema de cinemática de veículos, com os seguintes detalhes:
+1.  Uma expressão matemática que define as velocidades: **0 < Vₐ < Vᵦ** — isso indica que a velocidade do carro A é positiva, ou seja, o veículo está em movimento, e é menor que a velocidade do carro B.
+2.  Uma informação sobre a direção do movimento: *o carro A se move para a esquerda.*
+
+O texto é exibido em fonte preta, sobre fundo branco, sem outros elementos gráficos além do texto com notação de índices para diferenciar as velocidades dos dois carros, A e B.
+
+D) enem-data/enem-2018/131-images/alt_img_3.png
+
+A imagem mostra um texto em fundo branco, com conteúdo matemático e uma afirmação em português:
+1.  **Desigualdade matemática**: `0 < V_B < V_A` — que indica que a velocidade do carro B, representada por V_B, é positiva e menor que a velocidade do carro A, representada por V_A.
+2.  **Afirmação explicativa**: *"o carro A se move para a direita."*
+
+Isso significa que:
+- O sentido positivo de movimento é para a direita, definido pelo movimento do carro A.
+- O carro B também se move para a direita, pois sua velocidade é positiva, mas com uma velocidade menor que a do carro A.
+
+E) enem-data/enem-2018/131-images/alt_img_4.png
+
+A imagem contém uma expressão matemática e uma frase em português, referente a um cenário de movimento de corpos, provavelmente de física cinemática:
+1.  **Inequação matemática**: `0 < V_B < V_A` — indica que a velocidade do corpo/carro B é positiva, ou seja, ele está em movimento e é menor que a velocidade do corpo/carro A.
+2.  **Frase explicativa**: *"o carro A se move para a esquerda."* — informa a direção do movimento do carro A.
+
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A imagem B apresenta a fórmula `0 < Vₐ < Vᵦ` e a frase explicativa “o carro A se move para a direita”. Essa informação é consistente com o experimento descrito na questão, onde o carro A não se move (Vₐ = 0) e o carro B se move para frente (Vᵦ > 0). A Terceira Lei de Newton é demonstrada no carro B, onde a ação de expelir o ar gera uma reação que o impulsiona para frente, enquanto o carro A, ao soprar ar contra a vela, não experimenta essa reação e permanece parado. Portanto, a alternativa B é a correta."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[17/30]  question_id = ENEM_2018_cin_131
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = True
+        alt. images = True
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000061   (running: $0.001731)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2018, ciencias-natureza)
+
+Em desenhos animados é comum vermos a personagem tentando impulsionar um barco soprando ar contra a vela para compensar a falta de vento. Algumas vezes usam o próprio fôlego, foles ou ventiladores. Estudantes de um laboratório didático resolveram investigar essa possibilidade. Para isso, usaram dois pequenos carros de plástico, A e B, instalaram sobre estes pequenas ventoinhas e fixaram verticalmente uma cartolina de curvatura
+parabólica para desempenhar uma função análoga á vela de um barco. No carro B inverteu-se o sentido da ventoinha e manteve-se a vela, a fim de manter as características físicas do barco, massa e formato da cartolina. As figuras representam os carros produzidos. A montagem do carro A busca simular a situação dos desenhos
+animados, pois a ventoinha está direcionada para a vela.
+
+Com os carros orientados de acordo com as figuras, os estudantes ligaram as ventoinhas, aguardaram o fluxo de ar ficar permanente e determinaram os módulos das velocidades médias dos carros  e  para o mesmo intervalo de tempo.
+
+
+A imagem mostra dois carrinhos experimentais, **Carro A** e **Carro B**, com estrutura idêntica: uma base com rodas, dois suportes verticais, um equipado com um ventilador e outro com uma placa curva, semelhante a uma vela/para-brisa.
+
+1.  **Carro A**: O ventilador está virado para a placa do próprio carro, soprando ar diretamente contra ela. O fluxo de ar sai do ventilador e impacta a superfície no mesmo veículo, uma força interna ao sistema.
+2.  **Carro B**: O ventilador está orientado para o lado externo, contrário à placa, soprando e expulsionando o ar para fora do carro, para trás em relação ao veículo.
+
+A ilustração demonstra um experimento de física sobre a **Terceira Lei de Newton, ação e reação**: no Carro A, a força é interna, então o carro não se move; no Carro B, a expulsão de ar gera uma reação que faz o carro se deslocar para frente.
+
+
+
+Essa imagem apresenta uma notação científica/matemática, muito usada em física e química, especialmente na área de espectroscopia:
+1.  A letra **A** maiúscula, em fonte serifada representa uma grandeza científica, como absorbância, amplificação ou uma propriedade similar.
+2.  Dentro dos parênteses, o símbolo grego **λ, lambda** — o símbolo padrão para **comprimento de onda** nas ciências.
+3.  A notação **A(λ)** indica que a grandeza *A* é uma **função dependente do comprimento de onda λ**: ou seja, o valor de A varia conforme o comprimento de onda considerado, um uso comum é em espectros de absorção, onde a absorbância é medida para diferentes comprimentos de onda.
+4.  A imagem é composta apenas por essa notação em cor preta, sobre fundo branco, sem outros elementos.
+
+
+
+Essa imagem apresenta uma notação química simples, em fundo branco:
+1.  O caractere principal é o **B**, símbolo químico do elemento **Boro**, em fonte destacada.
+2.  Ao lado direito, entre parênteses, está o numeral romano **V**, que representa o número 5: essa marcação indica que o átomo de Boro está no **estado de oxidação +5**, uma forma de valência do elemento usada em notações químicas.
+
+Todos os caracteres estão em cor preta, seguindo o padrão de registro químico para indicar a valência de um elemento.
+
+
+A respeito das intensidades das velocidades médias e do sentido de movimento do carro A, os estudantes observaram que:
+
+# Alternativas
+
+A) enem-data/enem-2018/131-images/alt_img_0.png
+
+Esta imagem apresenta um texto em português com notação de física/engenharia, que define as condições de movimento de dois veículos, os carros A e B:
+1.  **Vₐ = 0**: A velocidade do carro A é nula, ou seja, o veículo está parado.
+2.  **Vᵦ > 0**: A velocidade do carro B é positiva, significando que este veículo está em movimento.
+3.  A frase final *o carro A não se move.* reforça a informação que o carro A está parado, enquanto o carro B se desloca.
+
+Trata-se de um texto que estabelece condições iniciais para um problema de física, provavelmente sobre movimento relativo, dinâmica ou colisão de veículos.
+
+B) enem-data/enem-2018/131-images/alt_img_1.png
+
+A imagem apresenta uma expressão matemática e uma frase explicativa em português, relacionadas a movimento de veículos:
+1.  **Fórmula matemática**: `0 < Vₐ < Vᵦ` — ela indica que a velocidade do carro A, representada por Vₐ, é um valor positivo, maior que zero, e menor que a velocidade do carro B, representada por Vᵦ.
+2.  **Frase explicativa**: Ao lado da fórmula, está escrito *"o carro A se move para a direita."*, que contextualiza que a velocidade positiva de A corresponde a um movimento para a direita, seguindo o padrão de referência comum em física para velocidade positiva.
+
+C) enem-data/enem-2018/131-images/alt_img_2.png
+
+A imagem mostra um texto em português, relacionado a um problema de cinemática de veículos, com os seguintes detalhes:
+1.  Uma expressão matemática que define as velocidades: **0 < Vₐ < Vᵦ** — isso indica que a velocidade do carro A é positiva, ou seja, o veículo está em movimento, e é menor que a velocidade do carro B.
+2.  Uma informação sobre a direção do movimento: *o carro A se move para a esquerda.*
+
+O texto é exibido em fonte preta, sobre fundo branco, sem outros elementos gráficos além do texto com notação de índices para diferenciar as velocidades dos dois carros, A e B.
+
+D) enem-data/enem-2018/131-images/alt_img_3.png
+
+A imagem mostra um texto em fundo branco, com conteúdo matemático e uma afirmação em português:
+1.  **Desigualdade matemática**: `0 < V_B < V_A` — que indica que a velocidade do carro B, representada por V_B, é positiva e menor que a velocidade do carro A, representada por V_A.
+2.  **Afirmação explicativa**: *"o carro A se move para a direita."*
+
+Isso significa que:
+- O sentido positivo de movimento é para a direita, definido pelo movimento do carro A.
+- O carro B também se move para a direita, pois sua velocidade é positiva, mas com uma velocidade menor que a do carro A.
+
+E) enem-data/enem-2018/131-images/alt_img_4.png
+
+A imagem contém uma expressão matemática e uma frase em português, referente a um cenário de movimento de corpos, provavelmente de física cinemática:
+1.  **Inequação matemática**: `0 < V_B < V_A` — indica que a velocidade do corpo/carro B é positiva, ou seja, ele está em movimento e é menor que a velocidade do corpo/carro A.
+2.  **Frase explicativa**: *"o carro A se move para a esquerda."* — informa a direção do movimento do carro A.
+
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"A","reasoning_summary":"A resposta correta é A, pois a imagem apresenta um texto em português com notação de física/engenharia, que define as condições de movimento de dois veículos, os carros A e B. A velocidade do carro A é nula, ou seja, o veículo está parado, e a velocidade do carro B é positiva, significando que este veículo está em movimento. A frase final 'o carro A não se move' reforça a informação que o carro A está parado, enquanto o carro B se desloca. Isso é coerente com a descrição do experimento, que busca simular a situação dos desenhos animados, onde a personagem tenta impulsionar um barco soprando ar contra a vela para compensar a falta de vento. No entanto, no carro A, a ventoinha está direcionada para a vela, o que significa que a força é interna e não há movimento. Já no carro B, a ventoinha está orientada para o lado externo, contrário à placa, o que gera uma reação que faz o carro se deslocar para frente. Portanto, a resposta correta é A, pois ela reflete corretamente as condições de movimento dos carros A e B."}
+```
+
+--- PARSED ---
+chosen alternative : A
+correct alternative: B
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[18/30]  question_id = ENEM_2018_cin_131
+        model       = Qwen/Qwen3.5-4B
+        has_images  = True
+        alt. images = True
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000260   (running: $0.001991)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2018, ciencias-natureza)
+
+Em desenhos animados é comum vermos a personagem tentando impulsionar um barco soprando ar contra a vela para compensar a falta de vento. Algumas vezes usam o próprio fôlego, foles ou ventiladores. Estudantes de um laboratório didático resolveram investigar essa possibilidade. Para isso, usaram dois pequenos carros de plástico, A e B, instalaram sobre estes pequenas ventoinhas e fixaram verticalmente uma cartolina de curvatura
+parabólica para desempenhar uma função análoga á vela de um barco. No carro B inverteu-se o sentido da ventoinha e manteve-se a vela, a fim de manter as características físicas do barco, massa e formato da cartolina. As figuras representam os carros produzidos. A montagem do carro A busca simular a situação dos desenhos
+animados, pois a ventoinha está direcionada para a vela.
+
+Com os carros orientados de acordo com as figuras, os estudantes ligaram as ventoinhas, aguardaram o fluxo de ar ficar permanente e determinaram os módulos das velocidades médias dos carros  e  para o mesmo intervalo de tempo.
+
+
+A imagem mostra dois carrinhos experimentais, **Carro A** e **Carro B**, com estrutura idêntica: uma base com rodas, dois suportes verticais, um equipado com um ventilador e outro com uma placa curva, semelhante a uma vela/para-brisa.
+
+1.  **Carro A**: O ventilador está virado para a placa do próprio carro, soprando ar diretamente contra ela. O fluxo de ar sai do ventilador e impacta a superfície no mesmo veículo, uma força interna ao sistema.
+2.  **Carro B**: O ventilador está orientado para o lado externo, contrário à placa, soprando e expulsionando o ar para fora do carro, para trás em relação ao veículo.
+
+A ilustração demonstra um experimento de física sobre a **Terceira Lei de Newton, ação e reação**: no Carro A, a força é interna, então o carro não se move; no Carro B, a expulsão de ar gera uma reação que faz o carro se deslocar para frente.
+
+
+
+Essa imagem apresenta uma notação científica/matemática, muito usada em física e química, especialmente na área de espectroscopia:
+1.  A letra **A** maiúscula, em fonte serifada representa uma grandeza científica, como absorbância, amplificação ou uma propriedade similar.
+2.  Dentro dos parênteses, o símbolo grego **λ, lambda** — o símbolo padrão para **comprimento de onda** nas ciências.
+3.  A notação **A(λ)** indica que a grandeza *A* é uma **função dependente do comprimento de onda λ**: ou seja, o valor de A varia conforme o comprimento de onda considerado, um uso comum é em espectros de absorção, onde a absorbância é medida para diferentes comprimentos de onda.
+4.  A imagem é composta apenas por essa notação em cor preta, sobre fundo branco, sem outros elementos.
+
+
+
+Essa imagem apresenta uma notação química simples, em fundo branco:
+1.  O caractere principal é o **B**, símbolo químico do elemento **Boro**, em fonte destacada.
+2.  Ao lado direito, entre parênteses, está o numeral romano **V**, que representa o número 5: essa marcação indica que o átomo de Boro está no **estado de oxidação +5**, uma forma de valência do elemento usada em notações químicas.
+
+Todos os caracteres estão em cor preta, seguindo o padrão de registro químico para indicar a valência de um elemento.
+
+
+A respeito das intensidades das velocidades médias e do sentido de movimento do carro A, os estudantes observaram que:
+
+# Alternativas
+
+A) enem-data/enem-2018/131-images/alt_img_0.png
+
+Esta imagem apresenta um texto em português com notação de física/engenharia, que define as condições de movimento de dois veículos, os carros A e B:
+1.  **Vₐ = 0**: A velocidade do carro A é nula, ou seja, o veículo está parado.
+2.  **Vᵦ > 0**: A velocidade do carro B é positiva, significando que este veículo está em movimento.
+3.  A frase final *o carro A não se move.* reforça a informação que o carro A está parado, enquanto o carro B se desloca.
+
+Trata-se de um texto que estabelece condições iniciais para um problema de física, provavelmente sobre movimento relativo, dinâmica ou colisão de veículos.
+
+B) enem-data/enem-2018/131-images/alt_img_1.png
+
+A imagem apresenta uma expressão matemática e uma frase explicativa em português, relacionadas a movimento de veículos:
+1.  **Fórmula matemática**: `0 < Vₐ < Vᵦ` — ela indica que a velocidade do carro A, representada por Vₐ, é um valor positivo, maior que zero, e menor que a velocidade do carro B, representada por Vᵦ.
+2.  **Frase explicativa**: Ao lado da fórmula, está escrito *"o carro A se move para a direita."*, que contextualiza que a velocidade positiva de A corresponde a um movimento para a direita, seguindo o padrão de referência comum em física para velocidade positiva.
+
+C) enem-data/enem-2018/131-images/alt_img_2.png
+
+A imagem mostra um texto em português, relacionado a um problema de cinemática de veículos, com os seguintes detalhes:
+1.  Uma expressão matemática que define as velocidades: **0 < Vₐ < Vᵦ** — isso indica que a velocidade do carro A é positiva, ou seja, o veículo está em movimento, e é menor que a velocidade do carro B.
+2.  Uma informação sobre a direção do movimento: *o carro A se move para a esquerda.*
+
+O texto é exibido em fonte preta, sobre fundo branco, sem outros elementos gráficos além do texto com notação de índices para diferenciar as velocidades dos dois carros, A e B.
+
+D) enem-data/enem-2018/131-images/alt_img_3.png
+
+A imagem mostra um texto em fundo branco, com conteúdo matemático e uma afirmação em português:
+1.  **Desigualdade matemática**: `0 < V_B < V_A` — que indica que a velocidade do carro B, representada por V_B, é positiva e menor que a velocidade do carro A, representada por V_A.
+2.  **Afirmação explicativa**: *"o carro A se move para a direita."*
+
+Isso significa que:
+- O sentido positivo de movimento é para a direita, definido pelo movimento do carro A.
+- O carro B também se move para a direita, pois sua velocidade é positiva, mas com uma velocidade menor que a do carro A.
+
+E) enem-data/enem-2018/131-images/alt_img_4.png
+
+A imagem contém uma expressão matemática e uma frase em português, referente a um cenário de movimento de corpos, provavelmente de física cinemática:
+1.  **Inequação matemática**: `0 < V_B < V_A` — indica que a velocidade do corpo/carro B é positiva, ou seja, ele está em movimento e é menor que a velocidade do corpo/carro A.
+2.  **Frase explicativa**: *"o carro A se move para a esquerda."* — informa a direção do movimento do carro A.
+
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+
+
+{"predicted_answer":"A","reasoning_summary":"A questão aplica a Terceira Lei de Newton. No Carro A, a ventoinha sopra contra a vela, criando uma força interna ao sistema. Como o ar não é expelido para fora, a força resultante é nula e o carro permanece parado (Vₐ = 0). No Carro B, o ar é expelido para fora, gerando uma força de reação que move o veículo (Vᵦ > 0). Assim, a alternativa correta descreve Vₐ = 0 e Vᵦ > 0, indicando que o carro A não se move."}
+```
+
+--- PARSED ---
+chosen alternative : A
+correct alternative: B
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[19/30]  question_id = ENEM_2019_mat_151
+        model       = google/gemma-3-4b-it
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000057   (running: $0.002048)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2019, matematica)
+
+Uma administração municipal encomendou a pintura de dez placas de sinalização para colocar em seu patio de estacionamento.
+O profissional contratado para o serviço inicial pintará o fundo de dez placas e cobrará um valor de acordo com a área total dessas placas. O formato de cada placa é um círculo de diâmetro d = 40 cm, que tangencia lados de um retângulo, sendo que o comprimento total da placa é h = 60 cm, conforme lustrado na figura. Use 3,14 como aproximação para π.
+
+
+Esta é uma **placa de trânsito regulatória de proibição**, especificamente para "Proibido Estacionar", seguindo o padrão brasileiro:
+
+1.  **Estrutura**: Uma placa retangular com moldura preta e fundo branco, contendo um círculo preto no centro.
+2.  **Símbolo proibitivo**: Dentro do círculo, há a letra "E" que representa a ação de estacionar, cortada por uma barra diagonal negra, o símbolo padrão para indicar proibição.
+3.  **Legenda**: Abaixo do círculo, escrito em letras maiúsculas negras:
+    -   Linha 1: `PROIBIDO`
+    -   Linha 2: `ESTACIONAR`
+4.  **Dimensões indicadas**:
+    -   `d`: marca a largura do círculo central.
+    -   `h`: marca a altura total da placa retangular, da borda superior à inferior da moldura.
+
+A placa usa o esquema de cores padrão para placas de proibição: fundo branco e elementos gráficos/texto em preto.
+
+
+Qual é a soma das medidas das áreas, em centímetros quadrados, das dez placas?
+
+# Alternativas
+
+A) 16 628
+B) 22 280
+C) 28 560
+D) 41 120
+E) 66 240
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"C","reasoning_summary":"A área de cada placa é a área do retângulo (comprimento x largura) mais a área do círculo. O retângulo tem dimensões h = 60 cm e d = 40 cm, então o raio do círculo é r = d/2 = 20 cm. A área do retângulo é 60 * 40 = 2400 cm². A área do círculo é πr² = 3,14 * 20² = 3,14 * 400 = 1256 cm². Portanto, a área de cada placa é 2400 + 1256 = 3656 cm². Para dez placas, a soma das áreas é 10 * 3656 = 36560 cm². No entanto, houve um erro no cálculo. O diâmetro da placa é 40 cm, então o raio é 20 cm. O comprimento do retângulo é 60 cm e a largura é 40 cm. A área do retângulo é 60 * 40 = 2400 cm². A área do círculo é πr² = 3,14 * 20² = 3,14 * 400 = 1256 cm². A área total de uma placa é 2400 + 1256 = 3656 cm². Para dez placas, a soma das áreas é 10 * 3656 = 36560 cm². O valor correto é 28560, então a alternativa correta é C."}
+```
+
+--- PARSED ---
+chosen alternative : C
+correct alternative: B
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[20/30]  question_id = ENEM_2019_mat_151
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000026   (running: $0.002074)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2019, matematica)
+
+Uma administração municipal encomendou a pintura de dez placas de sinalização para colocar em seu patio de estacionamento.
+O profissional contratado para o serviço inicial pintará o fundo de dez placas e cobrará um valor de acordo com a área total dessas placas. O formato de cada placa é um círculo de diâmetro d = 40 cm, que tangencia lados de um retângulo, sendo que o comprimento total da placa é h = 60 cm, conforme lustrado na figura. Use 3,14 como aproximação para π.
+
+
+Esta é uma **placa de trânsito regulatória de proibição**, especificamente para "Proibido Estacionar", seguindo o padrão brasileiro:
+
+1.  **Estrutura**: Uma placa retangular com moldura preta e fundo branco, contendo um círculo preto no centro.
+2.  **Símbolo proibitivo**: Dentro do círculo, há a letra "E" que representa a ação de estacionar, cortada por uma barra diagonal negra, o símbolo padrão para indicar proibição.
+3.  **Legenda**: Abaixo do círculo, escrito em letras maiúsculas negras:
+    -   Linha 1: `PROIBIDO`
+    -   Linha 2: `ESTACIONAR`
+4.  **Dimensões indicadas**:
+    -   `d`: marca a largura do círculo central.
+    -   `h`: marca a altura total da placa retangular, da borda superior à inferior da moldura.
+
+A placa usa o esquema de cores padrão para placas de proibição: fundo branco e elementos gráficos/texto em preto.
+
+
+Qual é a soma das medidas das áreas, em centímetros quadrados, das dez placas?
+
+# Alternativas
+
+A) 16 628
+B) 22 280
+C) 28 560
+D) 41 120
+E) 66 240
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A área de uma placa é a soma da área do círculo e da área do retângulo. A área do círculo é πr², onde r é o raio. O raio é metade do diâmetro, então r = d/2 = 40/2 = 20 cm. A área do círculo é π(20)² = 3,14(400) = 1256 cm². A área do retângulo é o comprimento vezes a largura, então área = h × d = 60 × 40 = 2400 cm². A área total de uma placa é a soma dessas áreas, então área total = 1256 + 2400 = 3656 cm². A soma das áreas das dez placas é 10 × 3656 = 36 560 cm². A alternativa B é a única que está próxima desse valor."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[21/30]  question_id = ENEM_2019_mat_151
+        model       = Qwen/Qwen3.5-4B
+        has_images  = True
+        alt. images = False
+        attempts    = 3 / 3   (status=empty)
+        cost        = $0.000246   (running: $0.002320)
+
+--- PROMPT (user) ---
+# Questão (ENEM, 2019, matematica)
+
+Uma administração municipal encomendou a pintura de dez placas de sinalização para colocar em seu patio de estacionamento.
+O profissional contratado para o serviço inicial pintará o fundo de dez placas e cobrará um valor de acordo com a área total dessas placas. O formato de cada placa é um círculo de diâmetro d = 40 cm, que tangencia lados de um retângulo, sendo que o comprimento total da placa é h = 60 cm, conforme lustrado na figura. Use 3,14 como aproximação para π.
+
+
+Esta é uma **placa de trânsito regulatória de proibição**, especificamente para "Proibido Estacionar", seguindo o padrão brasileiro:
+
+1.  **Estrutura**: Uma placa retangular com moldura preta e fundo branco, contendo um círculo preto no centro.
+2.  **Símbolo proibitivo**: Dentro do círculo, há a letra "E" que representa a ação de estacionar, cortada por uma barra diagonal negra, o símbolo padrão para indicar proibição.
+3.  **Legenda**: Abaixo do círculo, escrito em letras maiúsculas negras:
+    -   Linha 1: `PROIBIDO`
+    -   Linha 2: `ESTACIONAR`
+4.  **Dimensões indicadas**:
+    -   `d`: marca a largura do círculo central.
+    -   `h`: marca a altura total da placa retangular, da borda superior à inferior da moldura.
+
+A placa usa o esquema de cores padrão para placas de proibição: fundo branco e elementos gráficos/texto em preto.
+
+
+Qual é a soma das medidas das áreas, em centímetros quadrados, das dez placas?
+
+# Alternativas
+
+A) 16 628
+B) 22 280
+C) 28 560
+D) 41 120
+E) 66 240
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+<empty>
+```
+
+--- PARSED ---
+chosen alternative : None
+correct alternative: B
+is_correct         : N/A
+
+───────────────────────────────────────────────
+[22/30]  question_id = USP_2019_19
+        model       = google/gemma-3-4b-it
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000032   (running: $0.002351)
+
+--- PROMPT (user) ---
+# Questão (FUVEST, 2019, physics)
+
+Uma pessoa observa uma vela através de uma lente de vidro
+biconvexa, como representado na figura.
+
+Esta é uma ilustração de **física óptica** que representa um sistema com uma lente convergente, detalhada a seguir:
+
+1.  **À esquerda**: Um olho humano com cílios visíveis, alinhado para olhar ao longo de um **eixo óptico** — linha tracejada horizontal, eixo central do sistema.
+2.  **No centro**: Uma **lente convergente biconvexa**, alinhada perfeitamente com o eixo óptico.
+3.  **À direita da lente**: Um objeto (uma vela com chama) posicionado **dentro da distância focal** da lente, entre a lente e o **foco principal (F)** — marcado com uma cruz e a letra "F", localizado mais à direita, ao longo do eixo óptico.
+
+Essa configuração é um exemplo de formação de imagem virtual, direita e ampliada, vista pelo olho à esquerda, pois o objeto está dentro do foco da lente convergente.
+
+Considere que a vela está posicionada entre a lente e o seu
+ponto focal F. Nesta condição, a imagem observada pela pessoa
+é
+
+# Alternativas
+
+A) virtual, invertida e maior.
+B) virtual, invertida e menor.
+C) real, direita e menor.
+D) real, invertida e maior.
+E) virtual, direita e maior.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A lente biconvexa converge os raios de luz. Quando o objeto (vela) está dentro da distância focal, a imagem formada é virtual, pois não há realicidade de reflexão ou refração. A imagem é direita (inverte a posição do objeto), menor (aumenta a distância da lente) e está localizada do mesmo lado da lente que o objeto. Portanto, a alternativa correta é a B."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: E
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[23/30]  question_id = USP_2019_19
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000021   (running: $0.002372)
+
+--- PROMPT (user) ---
+# Questão (FUVEST, 2019, physics)
+
+Uma pessoa observa uma vela através de uma lente de vidro
+biconvexa, como representado na figura.
+
+Esta é uma ilustração de **física óptica** que representa um sistema com uma lente convergente, detalhada a seguir:
+
+1.  **À esquerda**: Um olho humano com cílios visíveis, alinhado para olhar ao longo de um **eixo óptico** — linha tracejada horizontal, eixo central do sistema.
+2.  **No centro**: Uma **lente convergente biconvexa**, alinhada perfeitamente com o eixo óptico.
+3.  **À direita da lente**: Um objeto (uma vela com chama) posicionado **dentro da distância focal** da lente, entre a lente e o **foco principal (F)** — marcado com uma cruz e a letra "F", localizado mais à direita, ao longo do eixo óptico.
+
+Essa configuração é um exemplo de formação de imagem virtual, direita e ampliada, vista pelo olho à esquerda, pois o objeto está dentro do foco da lente convergente.
+
+Considere que a vela está posicionada entre a lente e o seu
+ponto focal F. Nesta condição, a imagem observada pela pessoa
+é
+
+# Alternativas
+
+A) virtual, invertida e maior.
+B) virtual, invertida e menor.
+C) real, direita e menor.
+D) real, invertida e maior.
+E) virtual, direita e maior.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"A","reasoning_summary":"A imagem formada pela lente convergente biconvexa, quando o objeto está entre a lente e o seu ponto focal, é virtual, invertida e maior. Isso ocorre porque a lente convergente converge as ondas luminosas, formando uma imagem virtual e ampliada. A imagem é invertida porque a lente convergente inverte a orientação das ondas luminosas. Além disso, a imagem é maior porque a lente convergente converge as ondas luminosas, aumentando o tamanho da imagem em relação ao objeto original. Portanto, a resposta correta é A) virtual, invertida e maior."}
+```
+
+--- PARSED ---
+chosen alternative : A
+correct alternative: E
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[24/30]  question_id = USP_2019_19
+        model       = Qwen/Qwen3.5-4B
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000169   (running: $0.002541)
+
+--- PROMPT (user) ---
+# Questão (FUVEST, 2019, physics)
+
+Uma pessoa observa uma vela através de uma lente de vidro
+biconvexa, como representado na figura.
+
+Esta é uma ilustração de **física óptica** que representa um sistema com uma lente convergente, detalhada a seguir:
+
+1.  **À esquerda**: Um olho humano com cílios visíveis, alinhado para olhar ao longo de um **eixo óptico** — linha tracejada horizontal, eixo central do sistema.
+2.  **No centro**: Uma **lente convergente biconvexa**, alinhada perfeitamente com o eixo óptico.
+3.  **À direita da lente**: Um objeto (uma vela com chama) posicionado **dentro da distância focal** da lente, entre a lente e o **foco principal (F)** — marcado com uma cruz e a letra "F", localizado mais à direita, ao longo do eixo óptico.
+
+Essa configuração é um exemplo de formação de imagem virtual, direita e ampliada, vista pelo olho à esquerda, pois o objeto está dentro do foco da lente convergente.
+
+Considere que a vela está posicionada entre a lente e o seu
+ponto focal F. Nesta condição, a imagem observada pela pessoa
+é
+
+# Alternativas
+
+A) virtual, invertida e maior.
+B) virtual, invertida e menor.
+C) real, direita e menor.
+D) real, invertida e maior.
+E) virtual, direita e maior.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D, E
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+
+
+{
+"predicted_answer": "E",
+"reasoning_summary": "Para uma lente convergente, quando o objeto está posicionado entre a lente e o foco (distância objeto menor que a distância focal), a imagem formada é virtual, direita e ampliada. Isso ocorre porque os raios de luz que saem da vela divergem após atravessar a lente, e o olho humano os reconstrói como se viessem de um ponto atrás da lente. Essa configuração é a base do uso de uma lupa. Assim, a imagem observada é virtual, direita e maior. A alternativa correta é a E."
+}
+```
+
+--- PARSED ---
+chosen alternative : E
+correct alternative: E
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[25/30]  question_id = UNICAMP_2020_67
+        model       = google/gemma-3-4b-it
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000045   (running: $0.002586)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, portuguese)
+
+Texto I
+
+Essa imagem é dividida em duas partes, com uma mensagem de luta por equidade no esporte feminino:
+
+1.  **Parte esquerda**: Uma fotografia em preto e branco da jogadora de futebol feminino brasileira Marta. Ela segura uma chuteira de futebol na mão, olhando diretamente para o observador com expressão séria. A chuteira **não tem logotipo de marca patrocinadora**, mas sim o símbolo de igualdade (`=`), referente à luta por equidade no esporte. Ela veste uma camisa com listras horizontais, em tom monocromático.
+
+2.  **Parte direita**: Uma postagem da conta de rede social *Go Equal* (@GoEqual), publicada em 13 de junho:
+    -   A postagem usa a hashtag `#BRAxAUS`, referente ao jogo entre Brasil e Austrália no futebol feminino, para contextualizar, e explica que essa rivalidade não é o único desafio que as mulheres enfrentam no esporte.
+    -   O texto destaca que Marta está competindo com uma chuteira **sem patrocínio**, com o símbolo de igualdade para representar a luta por equidade no esporte, buscando condições iguais entre o futebol masculino e feminino, em termos de patrocínios, reconhecimento e oportunidades
+
+Texto II
+O que levou Marta, seis vezes a melhor do mundo, a enfrentar
+a Austrália de chuteiras pretas? Adianto, não foi o futebol
+“raiz”. Marta não fechou patrocínio com nenhuma das gigantes
+do mercado esportivo. Não recebeu nenhuma proposta à
+altura do seu futebol. Isso diz muito sobre o machismo no
+esporte. A partir disso, a atleta decidiu calçar a luta pela
+diversidade.
+(Fonte: https://www.hypeness.com.br/2019/06/chuteira-sem-logo-e-com-simbolo-de-igualdade
+-de-genero-foi-mais-um-golaco-de-marta/. Acessado em 18/06/2019.)
+Considerando o tweet e o texto acima, é correto afirmar
+que a atleta
+
+# Alternativas
+
+A) enfrentou o time adversário com chuteiras pretas,
+mesmo que não tenha sido influenciada pelo futebol
+“raiz”.
+B) usou chuteiras sem logotipo e luta pela igualdade de
+gênero no esporte, mesmo sendo considerada seis
+vezes a melhor do mundo.
+C) não recebeu patrocínio de nenhuma grande empresa,
+embora a chuteira preta sem logotipo simbolize o
+futebol “raiz”.
+D) optou por lutar contra o machismo no esporte, embora
+as propostas de patrocínio não tenham considerado
+seu valor.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"O texto II explica que Marta não recebeu patrocínio de grandes empresas, apesar de ser considerada a melhor do mundo seis vezes. A postagem do *Go Equal* e a imagem reforçam a luta por igualdade de gênero no esporte, com a chuteira sem logotipo e o símbolo de igualdade representando essa luta. Portanto, a alternativa B é a correta, pois descreve a ação de Marta em usar chuteiras sem logotipo e em lutar pela igualdade de gênero, conforme o texto e a imagem apresentam."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[26/30]  question_id = UNICAMP_2020_67
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = True
+        alt. images = False
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000027   (running: $0.002613)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, portuguese)
+
+Texto I
+
+Essa imagem é dividida em duas partes, com uma mensagem de luta por equidade no esporte feminino:
+
+1.  **Parte esquerda**: Uma fotografia em preto e branco da jogadora de futebol feminino brasileira Marta. Ela segura uma chuteira de futebol na mão, olhando diretamente para o observador com expressão séria. A chuteira **não tem logotipo de marca patrocinadora**, mas sim o símbolo de igualdade (`=`), referente à luta por equidade no esporte. Ela veste uma camisa com listras horizontais, em tom monocromático.
+
+2.  **Parte direita**: Uma postagem da conta de rede social *Go Equal* (@GoEqual), publicada em 13 de junho:
+    -   A postagem usa a hashtag `#BRAxAUS`, referente ao jogo entre Brasil e Austrália no futebol feminino, para contextualizar, e explica que essa rivalidade não é o único desafio que as mulheres enfrentam no esporte.
+    -   O texto destaca que Marta está competindo com uma chuteira **sem patrocínio**, com o símbolo de igualdade para representar a luta por equidade no esporte, buscando condições iguais entre o futebol masculino e feminino, em termos de patrocínios, reconhecimento e oportunidades
+
+Texto II
+O que levou Marta, seis vezes a melhor do mundo, a enfrentar
+a Austrália de chuteiras pretas? Adianto, não foi o futebol
+“raiz”. Marta não fechou patrocínio com nenhuma das gigantes
+do mercado esportivo. Não recebeu nenhuma proposta à
+altura do seu futebol. Isso diz muito sobre o machismo no
+esporte. A partir disso, a atleta decidiu calçar a luta pela
+diversidade.
+(Fonte: https://www.hypeness.com.br/2019/06/chuteira-sem-logo-e-com-simbolo-de-igualdade
+-de-genero-foi-mais-um-golaco-de-marta/. Acessado em 18/06/2019.)
+Considerando o tweet e o texto acima, é correto afirmar
+que a atleta
+
+# Alternativas
+
+A) enfrentou o time adversário com chuteiras pretas,
+mesmo que não tenha sido influenciada pelo futebol
+“raiz”.
+B) usou chuteiras sem logotipo e luta pela igualdade de
+gênero no esporte, mesmo sendo considerada seis
+vezes a melhor do mundo.
+C) não recebeu patrocínio de nenhuma grande empresa,
+embora a chuteira preta sem logotipo simbolize o
+futebol “raiz”.
+D) optou por lutar contra o machismo no esporte, embora
+as propostas de patrocínio não tenham considerado
+seu valor.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A pergunta requer uma análise do contexto da imagem e do texto. A imagem mostra Marta segurando uma chuteira sem logotipo de marca patrocinadora, com o símbolo de igualdade, e o texto explica que ela decidiu calçar a luta pela diversidade, usando chuteiras sem logotipo para representar a luta por equidade no esporte. Portanto, a resposta correta é a alternativa B, que afirma que Marta usou chuteiras sem logotipo e luta pela igualdade de gênero no esporte, mesmo sendo considerada seis vezes a melhor do mundo."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[27/30]  question_id = UNICAMP_2020_67
+        model       = Qwen/Qwen3.5-4B
+        has_images  = True
+        alt. images = False
+        attempts    = 3 / 3   (status=empty)
+        cost        = $0.000251   (running: $0.002864)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2020, portuguese)
+
+Texto I
+
+Essa imagem é dividida em duas partes, com uma mensagem de luta por equidade no esporte feminino:
+
+1.  **Parte esquerda**: Uma fotografia em preto e branco da jogadora de futebol feminino brasileira Marta. Ela segura uma chuteira de futebol na mão, olhando diretamente para o observador com expressão séria. A chuteira **não tem logotipo de marca patrocinadora**, mas sim o símbolo de igualdade (`=`), referente à luta por equidade no esporte. Ela veste uma camisa com listras horizontais, em tom monocromático.
+
+2.  **Parte direita**: Uma postagem da conta de rede social *Go Equal* (@GoEqual), publicada em 13 de junho:
+    -   A postagem usa a hashtag `#BRAxAUS`, referente ao jogo entre Brasil e Austrália no futebol feminino, para contextualizar, e explica que essa rivalidade não é o único desafio que as mulheres enfrentam no esporte.
+    -   O texto destaca que Marta está competindo com uma chuteira **sem patrocínio**, com o símbolo de igualdade para representar a luta por equidade no esporte, buscando condições iguais entre o futebol masculino e feminino, em termos de patrocínios, reconhecimento e oportunidades
+
+Texto II
+O que levou Marta, seis vezes a melhor do mundo, a enfrentar
+a Austrália de chuteiras pretas? Adianto, não foi o futebol
+“raiz”. Marta não fechou patrocínio com nenhuma das gigantes
+do mercado esportivo. Não recebeu nenhuma proposta à
+altura do seu futebol. Isso diz muito sobre o machismo no
+esporte. A partir disso, a atleta decidiu calçar a luta pela
+diversidade.
+(Fonte: https://www.hypeness.com.br/2019/06/chuteira-sem-logo-e-com-simbolo-de-igualdade
+-de-genero-foi-mais-um-golaco-de-marta/. Acessado em 18/06/2019.)
+Considerando o tweet e o texto acima, é correto afirmar
+que a atleta
+
+# Alternativas
+
+A) enfrentou o time adversário com chuteiras pretas,
+mesmo que não tenha sido influenciada pelo futebol
+“raiz”.
+B) usou chuteiras sem logotipo e luta pela igualdade de
+gênero no esporte, mesmo sendo considerada seis
+vezes a melhor do mundo.
+C) não recebeu patrocínio de nenhuma grande empresa,
+embora a chuteira preta sem logotipo simbolize o
+futebol “raiz”.
+D) optou por lutar contra o machismo no esporte, embora
+as propostas de patrocínio não tenham considerado
+seu valor.
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+<empty>
+```
+
+--- PARSED ---
+chosen alternative : None
+correct alternative: B
+is_correct         : N/A
+
+───────────────────────────────────────────────
+[28/30]  question_id = UNICAMP_2019_63
+        model       = google/gemma-3-4b-it
+        has_images  = True
+        alt. images = True
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000067   (running: $0.002931)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2019, mathematics)
+
+Sejam a e b números reais positivos. Considere a função
+quadrática f(x) = x(ax+b), definida para todo número
+real x. No plano cartesiano, qual figura corresponde ao
+gráfico de y = f(𝑥)?
+
+# Alternativas
+
+A) 
+A imagem mostra o gráfico de uma **função quadrática, parábola** em um sistema de coordenadas cartesianas, com eixo horizontal *x* e eixo vertical *y* que se cruzam na origem (0,0).
+
+Detalhes do gráfico:
+1.  **Concavidade**: A parábola é **concava para cima**, indicando que o coeficiente do termo *x²* da função é positivo.
+2.  **Interceptos**:
+    -   Cruza a origem (0,0), interceptando tanto o eixo x quanto o eixo y neste ponto.
+    -   Possui um segundo ponto de intercepto com o eixo x, em um valor positivo de *x*, ou seja, um segundo zero da função em *x > 0*.
+3.  **Vértice**: O ponto mínimo, vértice, da parábola está no **4º quadrante**: abaixo do eixo x, à direita do eixo y, com coordenadas (h,k) onde *h > 0* e *k < 0*.
+4.  **Comportamento**: À medida que *x* tende para +∞ ou -∞, o valor de *y* tende para +∞, a parábola se estende para cima nos dois extremos.
+
+B) 
+A imagem mostra um **gráfico de função quadrática, parábola** inserido em um plano cartesiano:
+1.  O plano conta com eixo x, horizontal com sentido positivo para a direita, e eixo y, vertical com sentido positivo para cima, que se cruzam na origem (0,0).
+2.  A parábola é **concava para cima, abre para cima**:
+    -   Intercepta o eixo x em dois pontos: na origem (0,0) e em um ponto com coordenada x negativa, lado esquerdo do plano.
+    -   Seu vértice, ponto mínimo da função, está no quadrante inferior esquerdo, com valores de x negativo e y negativo, abaixo do eixo x e à esquerda da origem.
+    -   A parábola é simétrica em relação a uma reta vertical, eixo de simetria, que passa pelo seu vértice, e essa reta está à esquerda da origem.
+    -   O gráfico decresce até chegar ao vértice, e depois começa a crescer, tendendo a valores positivos de y para valores muito grandes de x, tanto positivos quanto negativos.
+
+C) 
+Esta imagem apresenta um **gráfico no sistema de coordenadas cartesianas**, com eixo horizontal *x* e eixo vertical *y*, cuja origem é o ponto de cruzamento dos dois eixos.
+
+A curva desenhada é uma **parábola função quadrática com concavidade voltada para baixo**:
+1.  Ela intercepta a **origem (0,0)** e também o eixo *x* em um segundo ponto, no lado positivo de *x* (x > 0).
+2.  Seu vértice, ponto máximo da curva por ser voltada para baixo, está localizado no semiplano superior (y > 0), no lado positivo do eixo *x*.
+3.  Para valores negativos de *x* à esquerda da origem, a curva está no semiplano inferior (y < 0), sobe até cruzar a origem, continua subindo até o vértice, depois desce para cruzar o eixo *x* novamente em x positivo, e segue para valores negativos de *y* quando *x* é maior que esse ponto de interseção.
+4.  Como todas as parábolas, ela é simétrica em relação à reta vertical que passa pelo seu vértice.
+
+D) 
+Esta imagem apresenta um gráfico cartesiano, com:
+1.  **Eixos:** Um eixo horizontal, o **eixo x**, e um eixo vertical, o **eixo y**, que se cruzam na origem (ponto (0,0)).
+2.  **Curva:** Uma **parábola concava para baixo**, aberta para baixo:
+    -   Ela intercepta o eixo x em dois pontos: um na própria origem (0,0) e outro ponto no lado negativo do eixo x, à esquerda da origem.
+    -   Seu vértice, o ponto máximo/mais alto da curva, está no semiplano superior (valor positivo de y), à esquerda do eixo y, valor negativo de x.
+    -   A curva cresce até o vértice, depois decresce: cruzando a origem e seguindo para o semiplano inferior (valor negativo de y) tanto no lado positivo do eixo x quanto no lado negativo, além do segundo ponto de interseção com o eixo x.
+
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"B","reasoning_summary":"A imagem B corresponde ao gráfico de y = f(x) = x(ax+b). A parábola é concava para cima, intercepta o eixo x em dois pontos (incluindo a origem) e possui um vértice no quadrante inferior esquerdo, com valores negativos de x e y. O comportamento da função, à medida que x tende a infinito positivo ou negativo, é de crescimento contínuo, conforme descrito na questão. As outras alternativas apresentam características incorretas, como concavidade para baixo (opção C), vértice no quadrante superior (opção D) ou um comportamento diferente da função quadrática dada."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+───────────────────────────────────────────────
+[29/30]  question_id = UNICAMP_2019_63
+        model       = meta-llama/Meta-Llama-3.1-8B-Instruct
+        has_images  = True
+        alt. images = True
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000037   (running: $0.002968)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2019, mathematics)
+
+Sejam a e b números reais positivos. Considere a função
+quadrática f(x) = x(ax+b), definida para todo número
+real x. No plano cartesiano, qual figura corresponde ao
+gráfico de y = f(𝑥)?
+
+# Alternativas
+
+A) 
+A imagem mostra o gráfico de uma **função quadrática, parábola** em um sistema de coordenadas cartesianas, com eixo horizontal *x* e eixo vertical *y* que se cruzam na origem (0,0).
+
+Detalhes do gráfico:
+1.  **Concavidade**: A parábola é **concava para cima**, indicando que o coeficiente do termo *x²* da função é positivo.
+2.  **Interceptos**:
+    -   Cruza a origem (0,0), interceptando tanto o eixo x quanto o eixo y neste ponto.
+    -   Possui um segundo ponto de intercepto com o eixo x, em um valor positivo de *x*, ou seja, um segundo zero da função em *x > 0*.
+3.  **Vértice**: O ponto mínimo, vértice, da parábola está no **4º quadrante**: abaixo do eixo x, à direita do eixo y, com coordenadas (h,k) onde *h > 0* e *k < 0*.
+4.  **Comportamento**: À medida que *x* tende para +∞ ou -∞, o valor de *y* tende para +∞, a parábola se estende para cima nos dois extremos.
+
+B) 
+A imagem mostra um **gráfico de função quadrática, parábola** inserido em um plano cartesiano:
+1.  O plano conta com eixo x, horizontal com sentido positivo para a direita, e eixo y, vertical com sentido positivo para cima, que se cruzam na origem (0,0).
+2.  A parábola é **concava para cima, abre para cima**:
+    -   Intercepta o eixo x em dois pontos: na origem (0,0) e em um ponto com coordenada x negativa, lado esquerdo do plano.
+    -   Seu vértice, ponto mínimo da função, está no quadrante inferior esquerdo, com valores de x negativo e y negativo, abaixo do eixo x e à esquerda da origem.
+    -   A parábola é simétrica em relação a uma reta vertical, eixo de simetria, que passa pelo seu vértice, e essa reta está à esquerda da origem.
+    -   O gráfico decresce até chegar ao vértice, e depois começa a crescer, tendendo a valores positivos de y para valores muito grandes de x, tanto positivos quanto negativos.
+
+C) 
+Esta imagem apresenta um **gráfico no sistema de coordenadas cartesianas**, com eixo horizontal *x* e eixo vertical *y*, cuja origem é o ponto de cruzamento dos dois eixos.
+
+A curva desenhada é uma **parábola função quadrática com concavidade voltada para baixo**:
+1.  Ela intercepta a **origem (0,0)** e também o eixo *x* em um segundo ponto, no lado positivo de *x* (x > 0).
+2.  Seu vértice, ponto máximo da curva por ser voltada para baixo, está localizado no semiplano superior (y > 0), no lado positivo do eixo *x*.
+3.  Para valores negativos de *x* à esquerda da origem, a curva está no semiplano inferior (y < 0), sobe até cruzar a origem, continua subindo até o vértice, depois desce para cruzar o eixo *x* novamente em x positivo, e segue para valores negativos de *y* quando *x* é maior que esse ponto de interseção.
+4.  Como todas as parábolas, ela é simétrica em relação à reta vertical que passa pelo seu vértice.
+
+D) 
+Esta imagem apresenta um gráfico cartesiano, com:
+1.  **Eixos:** Um eixo horizontal, o **eixo x**, e um eixo vertical, o **eixo y**, que se cruzam na origem (ponto (0,0)).
+2.  **Curva:** Uma **parábola concava para baixo**, aberta para baixo:
+    -   Ela intercepta o eixo x em dois pontos: um na própria origem (0,0) e outro ponto no lado negativo do eixo x, à esquerda da origem.
+    -   Seu vértice, o ponto máximo/mais alto da curva, está no semiplano superior (valor positivo de y), à esquerda do eixo y, valor negativo de x.
+    -   A curva cresce até o vértice, depois decresce: cruzando a origem e seguindo para o semiplano inferior (valor negativo de y) tanto no lado positivo do eixo x quanto no lado negativo, além do segundo ponto de interseção com o eixo x.
+
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+{"predicted_answer":"C","reasoning_summary":"A função quadrática f(x) = x(ax+b) tem a forma geral de uma parábola. Como a é um número real positivo, a parábola é concava para baixo. Além disso, a função intercepta o eixo x em dois pontos, um na origem e outro no lado positivo do eixo x. O vértice da parábola está no semiplano superior, à esquerda do eixo y. Portanto, o gráfico de y = f(x) corresponde à parábola descrita na alternativa C."}
+```
+
+--- PARSED ---
+chosen alternative : C
+correct alternative: B
+is_correct         : FALSE
+
+───────────────────────────────────────────────
+[30/30]  question_id = UNICAMP_2019_63
+        model       = Qwen/Qwen3.5-4B
+        has_images  = True
+        alt. images = True
+        attempts    = 1 / 3   (status=ok)
+        cost        = $0.000237   (running: $0.003205)
+
+--- PROMPT (user) ---
+# Questão (UNICAMP, 2019, mathematics)
+
+Sejam a e b números reais positivos. Considere a função
+quadrática f(x) = x(ax+b), definida para todo número
+real x. No plano cartesiano, qual figura corresponde ao
+gráfico de y = f(𝑥)?
+
+# Alternativas
+
+A) 
+A imagem mostra o gráfico de uma **função quadrática, parábola** em um sistema de coordenadas cartesianas, com eixo horizontal *x* e eixo vertical *y* que se cruzam na origem (0,0).
+
+Detalhes do gráfico:
+1.  **Concavidade**: A parábola é **concava para cima**, indicando que o coeficiente do termo *x²* da função é positivo.
+2.  **Interceptos**:
+    -   Cruza a origem (0,0), interceptando tanto o eixo x quanto o eixo y neste ponto.
+    -   Possui um segundo ponto de intercepto com o eixo x, em um valor positivo de *x*, ou seja, um segundo zero da função em *x > 0*.
+3.  **Vértice**: O ponto mínimo, vértice, da parábola está no **4º quadrante**: abaixo do eixo x, à direita do eixo y, com coordenadas (h,k) onde *h > 0* e *k < 0*.
+4.  **Comportamento**: À medida que *x* tende para +∞ ou -∞, o valor de *y* tende para +∞, a parábola se estende para cima nos dois extremos.
+
+B) 
+A imagem mostra um **gráfico de função quadrática, parábola** inserido em um plano cartesiano:
+1.  O plano conta com eixo x, horizontal com sentido positivo para a direita, e eixo y, vertical com sentido positivo para cima, que se cruzam na origem (0,0).
+2.  A parábola é **concava para cima, abre para cima**:
+    -   Intercepta o eixo x em dois pontos: na origem (0,0) e em um ponto com coordenada x negativa, lado esquerdo do plano.
+    -   Seu vértice, ponto mínimo da função, está no quadrante inferior esquerdo, com valores de x negativo e y negativo, abaixo do eixo x e à esquerda da origem.
+    -   A parábola é simétrica em relação a uma reta vertical, eixo de simetria, que passa pelo seu vértice, e essa reta está à esquerda da origem.
+    -   O gráfico decresce até chegar ao vértice, e depois começa a crescer, tendendo a valores positivos de y para valores muito grandes de x, tanto positivos quanto negativos.
+
+C) 
+Esta imagem apresenta um **gráfico no sistema de coordenadas cartesianas**, com eixo horizontal *x* e eixo vertical *y*, cuja origem é o ponto de cruzamento dos dois eixos.
+
+A curva desenhada é uma **parábola função quadrática com concavidade voltada para baixo**:
+1.  Ela intercepta a **origem (0,0)** e também o eixo *x* em um segundo ponto, no lado positivo de *x* (x > 0).
+2.  Seu vértice, ponto máximo da curva por ser voltada para baixo, está localizado no semiplano superior (y > 0), no lado positivo do eixo *x*.
+3.  Para valores negativos de *x* à esquerda da origem, a curva está no semiplano inferior (y < 0), sobe até cruzar a origem, continua subindo até o vértice, depois desce para cruzar o eixo *x* novamente em x positivo, e segue para valores negativos de *y* quando *x* é maior que esse ponto de interseção.
+4.  Como todas as parábolas, ela é simétrica em relação à reta vertical que passa pelo seu vértice.
+
+D) 
+Esta imagem apresenta um gráfico cartesiano, com:
+1.  **Eixos:** Um eixo horizontal, o **eixo x**, e um eixo vertical, o **eixo y**, que se cruzam na origem (ponto (0,0)).
+2.  **Curva:** Uma **parábola concava para baixo**, aberta para baixo:
+    -   Ela intercepta o eixo x em dois pontos: um na própria origem (0,0) e outro ponto no lado negativo do eixo x, à esquerda da origem.
+    -   Seu vértice, o ponto máximo/mais alto da curva, está no semiplano superior (valor positivo de y), à esquerda do eixo y, valor negativo de x.
+    -   A curva cresce até o vértice, depois decresce: cruzando a origem e seguindo para o semiplano inferior (valor negativo de y) tanto no lado positivo do eixo x quanto no lado negativo, além do segundo ponto de interseção com o eixo x.
+
+
+# Valores permitidos para predicted_answer
+
+A, B, C, D
+
+Responda APENAS com o JSON.
+
+--- RAW RESPONSE ---
+```
+
+
+{"predicted_answer":"B","reasoning_summary":"A função é f(x) = ax^2 + bx. Como a > 0, a parábola é concava para cima. Os zeros são x=0 e x=-b/a. Como a e b são positivos, -b/a é negativo. Logo, os interceptos com o eixo x são a origem e um valor negativo. O vértice tem abscissa -b/2a (negativa) e ordenada negativa. A imagem B mostra uma parábola com concavidade para cima, interceptando a origem e um ponto negativo no eixo x, com vértice no terceiro quadrante. As outras opções apresentam concavidade para baixo ou interceptos positivos incorretos."}
+```
+
+--- PARSED ---
+chosen alternative : B
+correct alternative: B
+is_correct         : TRUE
+
+
+                                                   Smoke-test summary                                                   
+┏━━━━━━━━━━━━━━━━━━━┳━━━━┳━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ model             ┃  n ┃ n_ok ┃ n_truncated ┃ n_json_error ┃ n_correct ┃ accuracy ┃ total_cost_usd ┃ mean_latency_ms ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━╇━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ google/gemma-3-4… │ 10 │    8 │           2 │            0 │         7 │    70.0% │      $0.000574 │            6467 │
+│ meta-llama/Meta-… │ 10 │   10 │           0 │            0 │         6 │    60.0% │      $0.000280 │            4075 │
+│ Qwen/Qwen3.5-4B   │ 10 │    6 │           0 │            4 │         5 │    50.0% │      $0.002350 │            7274 │
+└───────────────────┴────┴──────┴─────────────┴──────────────┴───────────┴──────────┴────────────────┴─────────────────┘
+
+Total calls: 30  Total cost: $0.003205  prompt_tokens=26305  completion_tokens=18778

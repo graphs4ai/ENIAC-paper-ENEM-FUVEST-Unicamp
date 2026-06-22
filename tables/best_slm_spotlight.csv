@@ -1,0 +1,4 @@
+dataset,best_slm,best_slm_acc,best_large,best_large_acc,gap_pp
+ENEM,Qwen3.5-4B,84.02,GLM-5.1,90.87,6.85
+FUVEST,Qwen3.5-4B,84.08,GLM-5.1,91.51,7.43
+Unicamp,Qwen3.5-4B,85.57,GLM-5.1,93.74,8.17

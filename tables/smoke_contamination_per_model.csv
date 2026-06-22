@@ -1,0 +1,13 @@
+model_short,non_production_rows,total_rows
+DeepSeek-V3.2,904,3710
+DeepSeek-V4-Flash,902,3710
+GLM-5.1,3710,3710
+Llama-3.3-70B-Instruct-Turbo,899,3710
+Meta-Llama-3.1-8B-Instruct,943,3710
+Qwen3.5-0.8B,3710,3710
+Qwen3.5-2B,3710,3710
+Qwen3.5-4B,895,3710
+gemma-3-12b-it,902,3710
+gemma-3-27b-it,900,3710
+gemma-3-4b-it,935,3710
+gemma-4-31B-it,900,3710

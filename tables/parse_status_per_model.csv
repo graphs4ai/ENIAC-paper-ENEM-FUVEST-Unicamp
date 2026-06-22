@@ -1,0 +1,13 @@
+model_short,disallowed_value,disallowed_value_from_reasoning_content,empty,json_error,json_error_from_reasoning_content,ok,ok_from_reasoning_content,truncated_but_answered,truncated_but_answered_from_reasoning_content
+DeepSeek-V3.2,1,0,2,0,0,3707,0,0,0
+DeepSeek-V4-Flash,1,0,0,0,0,3709,0,0,0
+GLM-5.1,1,0,1,0,43,3533,124,7,1
+Llama-3.3-70B-Instruct-Turbo,1,0,0,0,0,3703,0,6,0
+Meta-Llama-3.1-8B-Instruct,2,0,20,0,0,3638,0,50,0
+Qwen3.5-0.8B,0,4,0,0,41,0,3657,0,8
+Qwen3.5-2B,0,4,0,0,40,0,3629,0,37
+Qwen3.5-4B,1,0,0,0,7,3693,2,5,2
+gemma-3-12b-it,2,0,0,0,0,3534,0,174,0
+gemma-3-27b-it,1,0,1,0,0,3459,0,249,0
+gemma-3-4b-it,1,0,3,7,0,3257,0,442,0
+gemma-4-31B-it,1,0,0,0,0,3708,0,1,0

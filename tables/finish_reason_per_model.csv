@@ -1,0 +1,13 @@
+model_short,length,other,stop
+DeepSeek-V3.2,0,2,3708
+DeepSeek-V4-Flash,0,0,3710
+GLM-5.1,44,1,3665
+Llama-3.3-70B-Instruct-Turbo,0,0,3710
+Meta-Llama-3.1-8B-Instruct,0,30,3680
+Qwen3.5-0.8B,41,0,3669
+Qwen3.5-2B,40,0,3670
+Qwen3.5-4B,11,9,3690
+gemma-3-12b-it,0,0,3710
+gemma-3-27b-it,0,1,3709
+gemma-3-4b-it,0,13,3697
+gemma-4-31B-it,0,0,3710

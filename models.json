@@ -1,0 +1,14 @@
+{
+    "google/gemma-3-4b-it":                       {"short": "gemma-3-4b-it",                "params_b": 4.0,   "is_slm": "True",  "moe": "False", "cost_per_m_input_usd": 0.04,  "cost_per_m_output_usd": 0.08},
+    "google/gemma-3-12b-it":                      {"short": "gemma-3-12b-it",               "params_b": 12.0,  "is_slm": "True",  "moe": "False", "cost_per_m_input_usd": 0.04,  "cost_per_m_output_usd": 0.13},
+    "google/gemma-3-27b-it":                      {"short": "gemma-3-27b-it",               "params_b": 27.0,  "is_slm": "False", "moe": "False", "cost_per_m_input_usd": 0.08,  "cost_per_m_output_usd": 0.16},
+    "google/gemma-4-31B-it":                      {"short": "gemma-4-31B-it",               "params_b": 31.0,  "is_slm": "False", "moe": "False", "cost_per_m_input_usd": 0.13,  "cost_per_m_output_usd": 0.38},
+    "meta-llama/Meta-Llama-3.1-8B-Instruct":      {"short": "Meta-Llama-3.1-8B-Instruct",   "params_b": 8.0,   "is_slm": "True",  "moe": "False", "cost_per_m_input_usd": 0.02,  "cost_per_m_output_usd": 0.05},
+    "Qwen/Qwen3.5-0.8B":                          {"short": "Qwen3.5-0.8B",                 "params_b": 0.8,   "is_slm": "True",  "moe": "True",  "cost_per_m_input_usd": 0.01,  "cost_per_m_output_usd": 0.05},
+    "Qwen/Qwen3.5-2B":                            {"short": "Qwen3.5-2B",                   "params_b": 2.0,   "is_slm": "True",  "moe": "False", "cost_per_m_input_usd": 0.02,  "cost_per_m_output_usd": 0.10},
+    "Qwen/Qwen3.5-4B":                            {"short": "Qwen3.5-4B",                   "params_b": 4.0,   "is_slm": "True",  "moe": "False", "cost_per_m_input_usd": 0.03,  "cost_per_m_output_usd": 0.15},
+    "meta-llama/Llama-3.3-70B-Instruct-Turbo":    {"short": "Llama-3.3-70B-Instruct-Turbo", "params_b": 70.0,  "is_slm": "False", "moe": "False", "cost_per_m_input_usd": 0.10,  "cost_per_m_output_usd": 0.32},
+    "deepseek-ai/DeepSeek-V4-Flash":              {"short": "DeepSeek-V4-Flash",            "params_b": 284.0, "is_slm": "False", "moe": "True",  "active_params_b": 13.0, "cost_per_m_input_usd": 0.14,  "cost_per_m_output_usd": 0.28, "cost_per_m_cached_usd": 0.028},
+    "deepseek-ai/DeepSeek-V3.2":                  {"short": "DeepSeek-V3.2",                "params_b": 671.0, "is_slm": "False", "moe": "True",  "active_params_b": 37.0, "cost_per_m_input_usd": 0.26,  "cost_per_m_output_usd": 0.38, "cost_per_m_cached_usd": 0.13},
+    "zai-org/GLM-5.1":                            {"short": "GLM-5.1",                      "params_b": 754.0, "is_slm": "False", "moe": "True",  "active_params_b": 40.0, "cost_per_m_input_usd": 1.05,  "cost_per_m_output_usd": 3.50, "cost_per_m_cached_usd": 0.205}
+}

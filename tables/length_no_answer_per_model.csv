@@ -1,0 +1,13 @@
+model_short,length_no_answer,total_rows,length_no_answer_pct
+GLM-5.1,43,3710,1.159
+Qwen3.5-0.8B,41,3710,1.105
+Qwen3.5-2B,40,3710,1.078
+Qwen3.5-4B,7,3710,0.189
+DeepSeek-V3.2,0,3710,0.0
+DeepSeek-V4-Flash,0,3710,0.0
+Llama-3.3-70B-Instruct-Turbo,0,3710,0.0
+Meta-Llama-3.1-8B-Instruct,0,3710,0.0
+gemma-3-12b-it,0,3710,0.0
+gemma-3-27b-it,0,3710,0.0
+gemma-3-4b-it,0,3710,0.0
+gemma-4-31B-it,0,3710,0.0

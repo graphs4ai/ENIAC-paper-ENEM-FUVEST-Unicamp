@@ -10,7 +10,7 @@ For both the experiments and the notebook to run, you must keep three repositori
 
 ```
 parent/
-├── ENIAC-paper-ENEM-FUVEST-Unicamp/   <-- you are here
+├── ENIAC-paper-ENEM-FUVEST-Unicamp/     <-- you are here
 ├── BLUEX/                               <-- FUVEST + UNICAMP question JSONs + images
 └── ENEM-question-answering/             <-- ENEM CSVs + images
 ```
